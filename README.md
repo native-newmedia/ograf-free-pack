@@ -49,7 +49,7 @@ Full control lists for every graphic are in the [documentation page](docs/index.
 
 ## Licence
 
-Graphics licence: to be added before the repo goes public.
+MIT, see [LICENSE](LICENSE).
 Bundled third-party material (Thinking Orbs, Roboto Flex, Uiverse.io snippets) is listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## More
