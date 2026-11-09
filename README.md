@@ -4,6 +4,8 @@
 
 ![The Free pack](docs/Thumbnails.png)
 
+**Documentation:** https://native-newmedia.github.io/ograf-free-pack/
+
 ## Requirements
 
 - DaVinci Resolve 21.1.1 or later with OGrafLoader. Tested on macOS with Resolve 21.1.2.
@@ -24,7 +26,7 @@ In Fusion, add an `OGrafLoader` node and set its file to a graphic's `.ograf.jso
 
 Ready-made Fusion comps are in `settings/` (one `.setting` per graphic) and `comps/comps-free.comp` (all graphics in one comp). They expect the pack installed as `OGraf-Free` in the Titles folder as above.
 
-Full control lists for every graphic are in the [documentation page](docs/index.html).
+Full control lists for every graphic are on the [documentation site](https://native-newmedia.github.io/ograf-free-pack/).
 
 ## Graphics
 
