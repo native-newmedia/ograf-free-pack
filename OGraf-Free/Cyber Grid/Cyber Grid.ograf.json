@@ -1,0 +1,152 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "cyber-grid",
+  "version": "1.0.0",
+  "name": "Cyber Grid",
+  "description": "Animated cyberpunk/synthwave grid background (CSS adapted from a Uiverse.io snippet by sunn_2633) — two independently-scrolling grid layers over a near-black base. Full-bleed only.",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "cyber-grid.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": {
+    "duration": 10
+  },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "bgColor": {
+        "type": "string",
+        "title": "Base Colour",
+        "default": "#050505ff",
+        "gddType": "color-rrggbbaa",
+        "pattern": "^#[0-9a-f]{8}$"
+      },
+      "showBackground": {
+        "type": "boolean",
+        "title": "Show Base Colour",
+        "default": true
+      },
+      "gridColorMain": {
+        "type": "string",
+        "title": "Main Grid Colour",
+        "default": "#03ffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "gridColorSub": {
+        "type": "string",
+        "title": "Sub Grid Colour",
+        "default": "#9adcff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "mainOpacity": {
+        "type": "number",
+        "title": "Main Grid Opacity",
+        "default": 1,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "subOpacity": {
+        "type": "number",
+        "title": "Sub Grid Opacity",
+        "default": 0.513,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "mainCellSize": {
+        "type": "number",
+        "title": "Main Cell Size (px)",
+        "default": 138.7,
+        "minimum": 10,
+        "maximum": 300
+      },
+      "subCellSize": {
+        "type": "number",
+        "title": "Sub Cell Size (px)",
+        "default": 38.3,
+        "minimum": 5,
+        "maximum": 150
+      },
+      "mainThickness": {
+        "type": "number",
+        "title": "Main Line Thickness (px)",
+        "default": 3,
+        "minimum": 0.5,
+        "maximum": 10
+      },
+      "subThickness": {
+        "type": "number",
+        "title": "Sub Line Thickness (px)",
+        "default": 2,
+        "minimum": 0.5,
+        "maximum": 10
+      },
+      "mainSpeed": {
+        "type": "number",
+        "title": "Main Grid Speed (px/s)",
+        "default": 15,
+        "minimum": -200,
+        "maximum": 200
+      },
+      "subSpeed": {
+        "type": "number",
+        "title": "Sub Grid Speed (px/s)",
+        "default": 10,
+        "minimum": -200,
+        "maximum": 200
+      },
+      "posX": {
+        "type": "number",
+        "title": "Position X (px)",
+        "default": 0,
+        "minimum": -960,
+        "maximum": 960
+      },
+      "posY": {
+        "type": "number",
+        "title": "Position Y (px)",
+        "default": 0,
+        "minimum": -540,
+        "maximum": 540
+      },
+      "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 10
+      },
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 10
+      },
+      "easePower": {
+        "type": "number",
+        "title": "Ease Power (1 = linear, 3 = cubic)",
+        "default": 3,
+        "minimum": 1,
+        "maximum": 6
+      }
+    }
+  },
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    { "type": "playAction", "duration": 0 },
+    { "type": "updateAction", "duration": 0 },
+    { "type": "stopAction", "duration": 0 }
+  ]
+}

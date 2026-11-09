@@ -1,0 +1,155 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "thinking-orbs-ograf",
+    "version": "1.0.0",
+    "name": "Thinking Orbs",
+    "description": "Dotted thought-orb spinner for AI/agent states — all nine states of thinking-orbs (github.com/Jakubantalik/thinking-orbs, MIT): 1 working, 2 searching, 3 solving, 4 listening, 5 connecting, 6 weaving, 7 composing, 8 breathing, 9 shaping. Geometry is verified against the library's own golden vectors (72 frames). The Inspector carries only settings that mean the same thing for every state; the per-state hand-tuning ships in orbs-tuning.jsonc. Draws NO text — the orb is an overlay to be captioned by the host.",
+    "author": { "name": "Dunn Lewis" },
+    "main": "thinking-orbs-ograf.js",
+    "supportsRealTime": false,
+    "supportsNonRealTime": true,
+    "stepCount": 1,
+    "v_bmd": { "duration": 10 },
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+
+            "orbState": {
+                "type": "integer",
+                "title": "Orb State \u2014 1 working  2 searching  3 solving  4 listening  5 connecting  6 weaving  7 composing  8 breathing  9 shaping",
+                "default": 2,
+                "minimum": 1,
+                "maximum": 9
+            },
+            "orbSize": {
+                "type": "number",
+                "title": "Orb Size (px)",
+                "default": 721,
+                "minimum": 20,
+                "maximum": 1600
+            },
+            "posX": {
+                "type": "number",
+                "title": "Position X (0-1 of frame)",
+                "default": 0.5,
+                "minimum": 0,
+                "maximum": 1
+            },
+            "posY": {
+                "type": "number",
+                "title": "Position Y (0-1 of frame)",
+                "default": 0.5,
+                "minimum": 0,
+                "maximum": 1
+            },
+
+            "speedMul": {
+                "type": "number",
+                "title": "Speed (x preset)",
+                "default": 0.5,
+                "minimum": 0.1,
+                "maximum": 5.0
+            },
+            "dotDensity": {
+                "type": "number",
+                "title": "Dot Density (x preset)",
+                "default": 1.0,
+                "minimum": 0.1,
+                "maximum": 3.0
+            },
+            "dotSize": {
+                "type": "number",
+                "title": "Dot Size (x preset)",
+                "default": 0.5,
+                "minimum": 0.25,
+                "maximum": 3.0
+            },
+
+            "theme": {
+                "type": "integer",
+                "title": "Ink Theme",
+                "default": 1,
+                "minimum": 1,
+                "maximum": 2,
+                "enum": [1, 2],
+                "gddType": "select",
+                "gddOptions": {
+                  "labels": {
+                    "1": "Dark ink",
+                    "2": "Light ink"
+                  }
+                }
+            },
+            "inkBrightColor": {
+                "type": "string",
+                "title": "Ink \u2014 Bright End (tint here)",
+                "default": "#ffffff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "inkDimColor": {
+                "type": "string",
+                "title": "Ink \u2014 Dim End (raise to lift the far side)",
+                "default": "#000000",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+
+            "bgColor": {
+                "type": "string",
+                "title": "Background Colour",
+                "default": "#000000ff",
+                "gddType": "color-rrggbbaa",
+                "pattern": "^#[0-9a-f]{8}$"
+            },
+            "showBackground": {
+                "type": "boolean",
+                "title": "Show Background",
+                "default": true
+            },
+            "introDuration": {
+                "type": "number",
+                "title": "Intro Duration (s)",
+                "default": 0.6,
+                "minimum": 0.2,
+                "maximum": 10
+            },
+            "outroDuration": {
+                "type": "number",
+                "title": "Outro Duration (s)",
+                "default": 0.4,
+                "minimum": 0.2,
+                "maximum": 10
+            },
+            "easePower": {
+                "type": "number",
+                "title": "Ease Power",
+                "default": 3,
+                "minimum": 1,
+                "maximum": 6
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width":  { "ideal": 1920 },
+                "height": { "ideal": 1080 }
+            },
+            "frameRate": { "ideal": 60 }
+        }
+    ],
+    "actionDurations": [
+        { "type": "playAction", "duration": 600 },
+        { "type": "updateAction", "duration": 0 },
+        { "type": "stopAction", "duration": 400 }
+    ],
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ]
+}

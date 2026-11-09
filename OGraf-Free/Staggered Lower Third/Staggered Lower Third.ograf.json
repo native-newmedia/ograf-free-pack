@@ -1,0 +1,145 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-stagger",
+  "version": "1.0.0",
+  "name": "Staggered Lower Third",
+  "description": "Staggered lower third. Intro runs from the clip's Play action (1.2s), exit from the Stop action (0.8s, auto-placed at clip end). Holds in between, so any clip length works.",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "lower-third-stagger.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": {
+    "duration": 10
+  },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "default": "John Doe"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title / Role",
+        "default": "Senior Producer"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Colour",
+        "default": "#00d2ff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "title": "Background Colour",
+        "default": "#0000009e",
+        "gddType": "color-rrggbbaa",
+        "pattern": "^#[0-9a-f]{8}$"
+      },
+      "showBackground": {
+        "type": "boolean",
+        "title": "Show Background",
+        "default": true
+      },
+      "nameColor": {
+        "type": "string",
+        "title": "Name Colour",
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "titleColor": {
+        "type": "string",
+        "title": "Title Colour",
+        "default": "#ffffffc7",
+        "gddType": "color-rrggbbaa",
+        "pattern": "^#[0-9a-f]{8}$"
+      },
+      "barWidth": {
+        "type": "integer",
+        "title": "Bar Width (px)",
+        "default": 6,
+        "minimum": 2,
+        "maximum": 32
+      },
+      "posX": {
+        "type": "number",
+        "title": "X Position",
+        "default": 10,
+        "minimum": 0,
+        "maximum": 100
+      },
+      "posY": {
+        "type": "number",
+        "title": "Y Position",
+        "default": 90,
+        "minimum": 0,
+        "maximum": 100
+      },
+       "scale": {
+        "type": "number",
+        "title": "Scale",
+        "default": 1.0,
+        "minimum": 0.1,
+        "maximum": 2.0
+      },
+         "easePower": {
+        "type": "number",
+        "title": "Ease Power",
+        "default": 3,
+        "minimum": 1,
+        "maximum": 6
+      },
+      "stagger": {
+        "type": "number",
+        "title": "Stagger (s)",
+        "default": 0.15,
+        "minimum": 0,
+        "maximum": 2
+       },
+        
+      "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 1.2,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+   
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 0.8,
+        "minimum": 0.2,
+        "maximum": 10
+      }
+    }
+  },
+  "actionDurations": [
+    {
+      "type": "playAction",
+      "duration": 1200
+    },
+    {
+      "type": "updateAction",
+      "duration": 0
+    },
+    {
+      "type": "stopAction",
+      "duration": 800
+    }
+  ],
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ]
+}

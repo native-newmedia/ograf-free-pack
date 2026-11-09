@@ -1,0 +1,185 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "data-driven-lower-third",
+  "version": "1.0.0",
+  "name": "Data Lower Third",
+  "description": "Lower third driven by a local JSON feed. The Data Entry slider jumps straight to any person, Next/Prev cycle through entries, Fetch (or the Reload Data checkbox) reloads the data. Manual override via Inspector text fields.",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "data-driven-lower-third.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": {
+    "duration": 10
+  },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "dataFile": {
+        "type": "string",
+        "title": "Data File (path)",
+        "default": "data/lower-third.jsonc",
+        "gddType": "single-line"
+      },
+      "reloadData": {
+        "type": "boolean",
+        "title": "Reload Data (toggle to re-read)",
+        "default": false,
+        "description": "Tick or untick this box to make the graphic re-read the data file."
+      },
+      "manualName": {
+        "type": "string",
+        "title": "Name (manual)",
+        "default": "Jane Smith"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title (manual)",
+        "default": "Senior Correspondent"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Subtitle (manual)",
+        "default": "Washington D.C."
+      },
+      "showSubtitle": {
+        "type": "boolean",
+        "title": "Show Subtitle",
+        "default": true
+      },
+      "showCounter": {
+        "type": "boolean",
+        "title": "Show Entry Counter",
+        "default": true
+      },
+      "dataIndex": {
+        "type": "integer",
+        "title": "Data Entry",
+        "description": "Person to show from data/lower-third.json (matches the number in the corner counter). Maximum should equal the record count in the JSON file — raise it if you add people.",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 6
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Colour",
+        "default": "#00d2ff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "nameColor": {
+        "type": "string",
+        "title": "Name Colour",
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "titleColor": {
+        "type": "string",
+        "title": "Title Colour",
+        "default": "#dcdcdc",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "showAccentBar": {
+        "type": "boolean",
+        "title": "Show Accent Bar",
+        "default": true
+      },
+      "bgOpacity": {
+        "type": "number",
+        "title": "BG Opacity",
+        "default": 0.72,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "posX": {
+        "type": "number",
+        "title": "X Position",
+        "default": 10,
+        "minimum": 0,
+        "maximum": 100
+      },
+      "posY": {
+        "type": "number",
+        "title": "Y Position",
+        "default": 90,
+        "minimum": 0,
+        "maximum": 100
+      },
+      "scale": {
+        "type": "number",
+        "title": "Scale",
+        "default": 1.5,
+        "minimum": 0.1,
+        "maximum": 2.0
+      },
+      "stagger": {
+        "type": "number",
+        "title": "Stagger (s)",
+        "default": 0.08,
+        "minimum": 0,
+        "maximum": 0.5
+      },
+      "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 0.55,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 0.4,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+      "easePower": {
+        "type": "number",
+        "title": "Ease Power (1 = linear, 3 = cubic)",
+        "default": 3,
+        "minimum": 1,
+        "maximum": 6
+      }
+    }
+  },
+  "customActions": [
+    {
+      "id": "fetch",
+      "name": "Fetch JSON"
+    },
+    {
+      "id": "prev",
+      "name": "Prev"
+    },
+    {
+      "id": "next",
+      "name": "Next"
+    }
+  ],
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    {
+      "type": "playAction",
+      "duration": 550
+    },
+    {
+      "type": "updateAction",
+      "duration": 0
+    },
+    {
+      "type": "stopAction",
+      "duration": 400
+    }
+  ]
+}

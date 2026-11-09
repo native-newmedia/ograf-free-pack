@@ -1,0 +1,131 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sine-wave-lines",
+    "version": "1.0.0",
+    "name": "Sine Wave",
+    "description": "Multiple layered sine waves drifting across the screen with organic interference patterns. Fully configurable colours, speed, amplitude and line count.",
+    "author": {
+        "name": "Dunn Lewis"
+    },
+    "main": "sine-wave-lines.js",
+    "supportsRealTime": false,
+    "supportsNonRealTime": true,
+    "stepCount": 1,
+    "v_bmd": { "duration": 60 },
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "backgroundColor": {
+                "type": "string",
+                "title": "Background Color",
+                "default": "#020818ff",
+                "gddType": "color-rrggbbaa",
+                "pattern": "^#[0-9a-f]{8}$"
+            },
+            "showBackground": {
+                "type": "boolean",
+                "title": "Show Background",
+                "default": true
+            },
+            "waveColor1": {
+                "type": "string",
+                "title": "Wave Color 1",
+                "default": "#00d2ff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "waveColor2": {
+                "type": "string",
+                "title": "Wave Color 2",
+                "default": "#7b2fff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "waveColor3": {
+                "type": "string",
+                "title": "Wave Color 3",
+                "default": "#ff2fd6",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "waveCount": {
+                "type": "integer",
+                "title": "Wave Count",
+                "default": 6,
+                "minimum": 1,
+                "maximum": 24
+            },
+            "speed": {
+                "type": "number",
+                "title": "Speed",
+                "default": 1.0,
+                "minimum": 0.0,
+                "maximum": 5.0
+            },
+            "amplitude": {
+                "type": "number",
+                "title": "Amplitude (px)",
+                "default": 80,
+                "minimum": 10,
+                "maximum": 400
+            },
+            "lineWidth": {
+                "type": "number",
+                "title": "Line Width (px)",
+                "default": 2.0,
+                "minimum": 0.5,
+                "maximum": 12.0
+            },
+            "blur": {
+                "type": "number",
+                "title": "Glow Blur (px)",
+                "default": 0,
+                "minimum": 0,
+                "maximum": 20
+            },
+            "introDuration": {
+                "type": "number",
+                "title": "Intro Duration (s)",
+                "default": 0,
+                "minimum": 0,
+                "maximum": 10
+            },
+            "outroDuration": {
+                "type": "number",
+                "title": "Outro Duration (s)",
+                "default": 0,
+                "minimum": 0,
+                "maximum": 10
+            }
+
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "actionDurations": [
+        { "type": "playAction", "duration": 0 },
+        { "type": "updateAction", "duration": 0 },
+        { "type": "stopAction", "duration": 0 }
+    ],
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ]
+}

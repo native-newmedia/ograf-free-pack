@@ -1,0 +1,178 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "auto-fit-headlines",
+  "version": "1.0.0",
+  "name": "Auto-Fit Headline",
+  "description": "News headline that fills a fixed-width container by adjusting the Roboto Flex wdth axis (25-151) instead of CSS transform:scaleX() — the font is designed to look correct at every width, so short headlines expand and long ones condense without any letterform distortion. Weight is driven by an urgency preset (BREAKING/ALERT/UPDATE/DEVELOPING). Headline/subhead colors and sizes plus XY placement are all Inspector-controlled.",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "auto-fit-headlines.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": {
+    "duration": 10
+  },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "headlineText": {
+        "type": "string",
+        "title": "Headline",
+        "default": "AUTO-FIT HEADLINES (ROBOTO FLEX) - SHORT HEADLINES EXPAND, LONG ONES CONDENSE WITHOUT LETTERFORM DISTORTION"
+      },
+      "urgency": {
+        "type": "number",
+        "title": "Urgency",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 4,
+        "enum": [1, 2, 3, 4],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "1": "Breaking",
+            "2": "Alert",
+            "3": "Update",
+            "4": "Developing"
+          }
+        }
+      },
+      "subheadText": {
+        "type": "string",
+        "title": "Subhead (multi-line)",
+        "default": ""
+      },
+      "headlineColor": {
+        "type": "string",
+        "title": "Headline Color",
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "subheadColor": {
+        "type": "string",
+        "title": "Subhead Color",
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+       "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ffb800",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "headlineSize": {
+        "type": "number",
+        "title": "Headline Size (%)",
+        "default": 100,
+        "minimum": 25,
+        "maximum": 300
+      },
+      "urgencySize": {
+        "type": "number",
+        "title": "Urgency Size (%)",
+        "default": 100,
+        "minimum": 25,
+        "maximum": 300
+      },
+      "minWdth": {
+        "type": "integer",
+        "title": "Min Width (auto-fit floor, 25-100)",
+        "default": 62,
+        "minimum": 25,
+        "maximum": 100
+      },
+      "maxWdth": {
+        "type": "integer",
+        "title": "Max Width (auto-fit ceiling, 100-151)",
+        "default": 125,
+        "minimum": 100,
+        "maximum": 151
+      },
+ 
+      "manualWdth": {
+        "type": "integer",
+        "title": "Manual Width (0 = auto-fit, else 25-151)",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 151
+      },
+      "fontUrl": {
+        "type": "string",
+        "title": "Variable Font File",
+        "gddType": "file-path",
+        "gddOptions": {
+          "extensions": [
+            ".woff2",
+            ".woff",
+            ".ttf"
+          ]
+        },
+        "default": "./RobotoFlex-Variable.ttf"
+      },
+      "posX": {
+        "type": "number",
+        "title": "X Position (% from left)",
+        "default": 6,
+        "minimum": 0,
+        "maximum": 100
+      },
+      "posY": {
+        "type": "number",
+        "title": "Y Position (% from top, centre)",
+        "default": 50,
+        "minimum": 0,
+        "maximum": 100
+      },
+      "stagger": {
+        "type": "number",
+        "title": "Stagger (s)",
+        "default": 0.15,
+        "minimum": 0,
+        "maximum": 2
+      },
+        "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 1,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 1,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+      "showDebug": {
+        "type": "boolean",
+        "title": "Show Debug Text",
+        "default": false
+      }
+    }
+  },
+  "customActions": [
+    {
+      "id": "refresh",
+      "name": "Reload Font"
+    }
+  ],
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    { "type": "playAction", "duration": 1000 },
+    { "type": "updateAction", "duration": 0 },
+    { "type": "stopAction", "duration": 1000 }
+  ]
+}

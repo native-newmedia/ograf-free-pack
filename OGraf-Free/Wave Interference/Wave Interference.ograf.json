@@ -1,0 +1,94 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "wave-interference",
+  "version": "1.0.0",
+  "name": "Wave Interference",
+  "description": "Layered sine-wave interference patterns. Canvas RAF. goToTime maps to _time for NRT. Fixed: blank frame 0, loop in load().",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "wave-interference.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": { "duration": 60 },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "backgroundColor": {
+        "type": "string",
+        "title": "Background Color",
+        "default": "#000000ff",
+        "gddType": "color-rrggbbaa",
+        "pattern": "^#[0-9a-f]{8}$"
+      },
+      "showBackground": {
+        "type": "boolean",
+        "title": "Show Background",
+        "default": true
+      },
+      "colorStart": {
+        "type": "string",
+        "title": "Gradient Start Color",
+        "default": "#71006a",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "colorEnd": {
+        "type": "string",
+        "title": "Gradient End Color",
+        "default": "#0000ff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "speed": {
+        "type": "number",
+        "title": "Wave Speed",
+        "default": 1.0,
+        "minimum": 0.1,
+        "maximum": 5.0
+      },
+      "complexity": {
+        "type": "integer",
+        "title": "Wave Complexity",
+        "default": 5,
+        "minimum": 1,
+        "maximum": 20
+      },
+      "amplitude": {
+        "type": "number",
+        "title": "Wave Amplitude",
+        "default": 100,
+        "minimum": 10,
+        "maximum": 500
+      },
+      "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 10
+      },
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 10
+      }
+    }
+  },
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    { "type": "playAction", "duration": 0 },
+    { "type": "updateAction", "duration": 0 },
+    { "type": "stopAction", "duration": 0 }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "flow-field",
+  "version": "1.0.0",
+  "name": "Flow Field",
+  "description": "Simplex noise flow field with blurred background grid + particle layer. Canvas RAF. goToTime maps to _time for NRT.",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "flow-field.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": { "duration": 60 },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "color1": {
+        "type": "string",
+        "title": "Particle Color 1",
+        "default": "#00ffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "color2": {
+        "type": "string",
+        "title": "Particle Color 2",
+        "default": "#ff00ff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "particleCount": {
+        "type": "integer",
+        "title": "Particle Count",
+        "default": 1000,
+        "minimum": 100,
+        "maximum": 5000
+      },
+      "backgroundColor": {
+        "type": "string",
+        "title": "Background Color",
+        "default": "#050510ff",
+        "gddType": "color-rrggbbaa",
+        "pattern": "^#[0-9a-f]{8}$"
+      },
+      "showBackground": {
+        "type": "boolean",
+        "title": "Show Background",
+        "default": true
+      },
+      "speed": {
+        "type": "number",
+        "title": "Flow Speed",
+        "default": 1.0,
+        "minimum": 0.1,
+        "maximum": 5.0
+      },
+      "scale": {
+        "type": "number",
+        "title": "Noise Scale",
+        "default": 3.306,
+        "minimum": 0.2,
+        "maximum": 5.0
+      },
+      "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 10
+      },
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 10
+      }
+    }
+  },
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    { "type": "playAction", "duration": 0 },
+    { "type": "updateAction", "duration": 0 },
+    { "type": "stopAction", "duration": 0 }
+  ]
+}

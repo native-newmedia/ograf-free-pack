@@ -1,0 +1,79 @@
+{
+	Tools = ordered() {
+		Out_gaming_overlay = MediaOut {
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input {
+					SourceOp = "Merge_gaming_overlay",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 220, 33 } },
+		},
+		Merge_gaming_overlay = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "BG_gaming_overlay",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "OGrafLoader_gaming_overlay",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 110, 33 } },
+		},
+		OGrafLoader_gaming_overlay = OGrafLoader {
+			Inputs = {
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Gaming Stats Overlay/Gaming Stats Overlay.ograf.json", },
+				GlobalOut = Input { Value = 240, },
+				TrimOut = Input { Value = 599, },
+				TimeScale = Input { Value = 2.5, },
+				StopActionUserModified = Input { Value = 0, },
+				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
+				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
+				["ScheduledAction_1.Time"] = Input { Value = 231, },
+				DynParamText0 = Input { Value = "data/stats.jsonc", },
+				DynParamColor2_R = Input { Value = 0.654901960784314, },
+				DynParamColor2_G = Input { Value = 0.545098039215686, },
+				DynParamColor2_B = Input { Value = 0.980392156862745, },
+				DynParamColor3_R = Input { Value = 0.0313725490196078, },
+				DynParamColor3_G = Input { Value = 0.0313725490196078, },
+				DynParamColor3_B = Input { Value = 0.0470588235294118, },
+				DynParamColor3_A = Input { Value = 0.850980392156863, },
+				DynParamColor4_R = Input { Value = 0.654901960784314, },
+				DynParamColor4_G = Input { Value = 0.545098039215686, },
+				DynParamColor4_B = Input { Value = 0.980392156862745, },
+				DynParamCheck5 = Input { Value = 1, },
+				DynParamCheck6 = Input { Value = 1, },
+				DynParamCheck7 = Input { Value = 1, },
+				DynParamCheck8 = Input { Value = 1, },
+				DynParamNum9 = Input { Value = 2, },
+				DynParamNum10 = Input { Value = 1.5, },
+				DynParamNum11 = Input { Value = 0.15, },
+				DynParamNum12 = Input { Value = 0.4, },
+				DynParamNum13 = Input { Value = 0.35, },
+				DynParamNum14 = Input { Value = 3, },
+				JSONLink = Input { Value = "{\n  \"$schema\": \"https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json\",\n  \"id\": \"gaming-overlay\",\n  \"version\": \"1.0.0\",\n  \"name\": \"Gaming Stats Overlay\",\n  \"description\": \"Esports/streaming HUD with K/D/A stats, rank, viewer count and win streak. Count-up animation driven by goToTime. +Kill/+Death live increment customActions.\",\n  \"author\": {\n    \"name\": \"Dunn Lewis\"\n  },\n  \"main\": \"gaming-overlay.js\",\n  \"supportsRealTime\": false,\n  \"supportsNonRealTime\": true,\n  \"stepCount\": 1,\n  \"v_bmd\": {\n    \"duration\": 10\n  },\n  \"schema\": {\n    \"type\": \"object\",\n    \"additionalProperties\": false,\n    \"properties\": {\n      \"dataFile\": {\n        \"type\": \"string\",\n        \"title\": \"Data File (path)\",\n        \"default\": \"data/stats.jsonc\",\n        \"gddType\": \"single-line\"\n      },\n      \"reloadData\": {\n        \"type\": \"boolean\",\n        \"title\": \"Reload Data (toggle to re-read)\",\n        \"default\": false,\n        \"description\": \"Tick or untick this box to make the graphic re-read the data file.\"\n      },\n      \"accentColor\": {\n        \"type\": \"string\",\n        \"title\": \"Accent Colour\",\n        \"default\": \"#a78bfa\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n      \"backgroundColor\": {\n        \"type\": \"string\",\n        \"title\": \"Background Color\",\n        \"default\": \"#08080cd9\",\n        \"gddType\": \"color-rrggbbaa\",\n        \"pattern\": \"^#[0-9a-f]{8}$\"\n      },\n      \"frameColor\": {\n        \"type\": \"string\",\n        \"title\": \"Accent Frame Color\",\n        \"default\": \"#a78bfaff\",\n        \"gddType\": \"color-rrggbbaa\",\n        \"pattern\": \"^#[0-9a-f]{8}$\"\n      },\n      \"showBackground\": {\n        \"type\": \"boolean\",\n        \"title\": \"Show Background\",\n        \"default\": true\n      },\n      \"showFrame\": {\n        \"type\": \"boolean\",\n        \"title\": \"Show Accent Frame\",\n        \"default\": true\n      },\n      \"showSubscribers\": {\n        \"type\": \"boolean\",\n        \"title\": \"Show Viewer Count\",\n        \"default\": true\n      },\n      \"showStreak\": {\n        \"type\": \"boolean\",\n        \"title\": \"Show Win Streak\",\n        \"default\": true\n      },\n      \"countDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Count-up Duration (s)\",\n        \"default\": 2.0,\n        \"minimum\": 0.1,\n        \"maximum\": 5.0\n      },\n      \"scale\": {\n        \"type\": \"number\",\n        \"title\": \"Scale\",\n        \"default\": 1.5,\n        \"minimum\": 0.1,\n        \"maximum\": 2.0\n      },\n      \"stagger\": {\n        \"type\": \"number\",\n        \"title\": \"Stagger (s)\",\n        \"default\": 0.15,\n        \"minimum\": 0,\n        \"maximum\": 2\n      },\n      \"introDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Intro Duration (s)\",\n        \"default\": 0.4,\n        \"minimum\": 0.2,\n        \"maximum\": 10\n      },\n      \"outroDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Outro Duration (s)\",\n        \"default\": 0.35,\n        \"minimum\": 0.2,\n        \"maximum\": 10\n      },\n      \"easePower\": {\n        \"type\": \"number\",\n        \"title\": \"Ease Power (1 = linear, 3 = cubic)\",\n        \"default\": 3,\n        \"minimum\": 1,\n        \"maximum\": 6\n      }\n    }\n  },\n  \"customActions\": [\n    {\n      \"id\": \"refresh\",\n      \"name\": \"Refresh Stats\"\n    },\n    {\n      \"id\": \"kill\",\n      \"name\": \"+1 Kill\"\n    },\n    {\n      \"id\": \"death\",\n      \"name\": \"+1 Death\"\n    },\n    {\n      \"id\": \"reset\",\n      \"name\": \"Reset Round\"\n    }\n  ],\n  \"renderRequirements\": [\n    {\n      \"frameRate\": {\n        \"ideal\": 60\n      }\n    }\n  ],\n  \"actionDurations\": [\n    {\n      \"type\": \"playAction\",\n      \"duration\": 400\n    },\n    {\n      \"type\": \"updateAction\",\n      \"duration\": 0\n    },\n    {\n      \"type\": \"stopAction\",\n      \"duration\": 350\n    }\n  ]\n}\n", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 110, 0 } },
+			UserControls = ordered() { JSONLink = { LINK_Main = 3, LINKID_DataType = "Text", INP_Default = 0, IC_ControlPage = -1, INPID_InputControl = "ImageControl", LINKS_Name = "JSON Link", } },
+			Version = 1
+		},
+		BG_gaming_overlay = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 226, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 33 } },
+		}
+	}
+}

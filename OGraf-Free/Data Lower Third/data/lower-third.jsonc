@@ -1,0 +1,52 @@
+// Edit the values below and save. Then tick or untick "Reload Data" in the Inspector to re-read this file.
+// Comments (like these lines) are allowed in .jsonc files.
+[
+  {
+    "name": "Michael Chang",
+    "title": "Chief Medical Correspondent",
+    "subtitle": "Atlanta, GA",
+    "show": "Morning Report",
+    "handle": "@mchangnews",
+    "segment": "Health & Science"
+  },
+  {
+    "name": "Sofia Reyes",
+    "title": "Senior White House Correspondent",
+    "subtitle": "Washington, D.C.",
+    "show": "The Daily Briefing",
+    "handle": "@sreyescaps",
+    "segment": "Politics"
+  },
+  {
+    "name": "James Okafor",
+    "title": "Business & Markets Editor",
+    "subtitle": "New York, NY",
+    "show": "Market Open",
+    "handle": "@jokaforbiz",
+    "segment": "Finance"
+  },
+  {
+    "name": "Elena Petrova",
+    "title": "International Affairs Analyst",
+    "subtitle": "London, UK",
+    "show": "World Tonight",
+    "handle": "@epetrova_intl",
+    "segment": "Global Desk"
+  },
+  {
+    "name": "Marcus Webb",
+    "title": "Sports Anchor",
+    "subtitle": "Chicago, IL",
+    "show": "Weekend Sports Desk",
+    "handle": "@mwebb_sports",
+    "segment": "Sports"
+  },
+  {
+    "name": "Aisha Rahman",
+    "title": "Climate & Environment Reporter",
+    "subtitle": "Denver, CO",
+    "show": "Planet Watch",
+    "handle": "@arahmanclimate",
+    "segment": "Environment"
+  }
+]

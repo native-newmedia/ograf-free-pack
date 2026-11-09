@@ -1,0 +1,144 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "ab-switcher",
+  "version": "1.0.0",
+  "name": "Lower Third Switcher",
+  "description": "Two lower-third layouts in one graphic. Toggle instantly between Layout A and Layout B. currentLayout field is NRT-safe.",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "ab-switcher.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": {
+    "duration": 10
+  },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "currentLayout": {
+          "type": "number",
+          "title": "Active Layout (1 Layout A, 2 Layout B)",
+          "default": 1,
+          "minimum": 1,
+          "maximum": 2
+      },
+      "nameA": {
+        "type": "string",
+        "title": "Name A",
+        "default": "Sarah Johnson"
+      },
+      "titleA": {
+        "type": "string",
+        "title": "Title A",
+        "default": "CEO, Acme Corp"
+      },
+      "subtitleA": {
+        "type": "string",
+        "title": "Subtitle A",
+        "default": "London"
+      },
+      "nameB": {
+        "type": "string",
+        "title": "Name B",
+        "default": "James Chen"
+      },
+      "titleB": {
+        "type": "string",
+        "title": "Title B",
+        "default": "CTO, Acme Corp"
+      },
+      "subtitleB": {
+        "type": "string",
+        "title": "Subtitle B",
+        "default": "New York"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Colour",
+        "default": "#00d2ff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "bgOpacity": {
+        "type": "number",
+        "title": "Background Opacity",
+        "default": 0.88,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "scale": {
+        "type": "number",
+        "title": "Scale",
+        "default": 1.5,
+        "minimum": 0.1,
+        "maximum": 2.0
+      },
+      "stagger": {
+        "type": "number",
+        "title": "Stagger (s)",
+        "default": 0.15,
+        "minimum": 0,
+        "maximum": 2
+      },
+      "easePower": {
+        "type": "number",
+        "title": "Ease Power (1 = linear, 3 = cubic)",
+        "default": 3,
+        "minimum": 1,
+        "maximum": 6
+      },
+      "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 0.5,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 0.4,
+        "minimum": 0.2,
+        "maximum": 10
+      }
+    }
+  },
+  "customActions": [
+    {
+      "id": "a",
+      "name": "Switch to A"
+    },
+    {
+      "id": "b",
+      "name": "Switch to B"
+    },
+    {
+      "id": "toggle",
+      "name": "Toggle A/B"
+    }
+  ],
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    {
+      "type": "playAction",
+      "duration": 500
+    },
+    {
+      "type": "updateAction",
+      "duration": 0
+    },
+    {
+      "type": "stopAction",
+      "duration": 400
+    }
+  ]
+}

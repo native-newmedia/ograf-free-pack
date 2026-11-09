@@ -1,0 +1,106 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "digital-circuit",
+  "version": "1.0.0",
+  "name": "Digital Circuit",
+  "description": "High-tech grid with signal tracers. Canvas RAF. goToTime maps to _time for NRT. Fixed: blank frame 0, loop in load().",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "digital-circuit.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": { "duration": 60 },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "gridColor": {
+        "type": "string",
+        "title": "Grid Color (Dim)",
+        "default": "#1a1a2eff",
+        "gddType": "color-rrggbbaa",
+        "pattern": "^#[0-9a-f]{8}$"
+      },
+      "signalColor": {
+        "type": "string",
+        "title": "Signal Tracer Color",
+        "default": "#00d2ff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "title": "Background Fill Color",
+        "default": "#050510ff",
+        "gddType": "color-rrggbbaa",
+        "pattern": "^#[0-9a-f]{8}$"
+      },
+      "showBackground": {
+        "type": "boolean",
+        "title": "Show Background",
+        "default": true
+      },
+      "showGrid": {
+        "type": "boolean",
+        "title": "Show Grid",
+        "default": true
+      },
+      "speed": {
+        "type": "number",
+        "title": "Signal Speed",
+        "default": 1.0,
+        "minimum": 0.1,
+        "maximum": 5.0
+      },
+      "gridDensity": {
+        "type": "integer",
+        "title": "Grid Density",
+        "default": 40,
+        "minimum": 10,
+        "maximum": 100
+      },
+      "signalSize": {
+        "type": "number",
+        "title": "Signal Tracer Size",
+        "default": 1.0,
+        "minimum": 0.2,
+        "maximum": 4.0
+      },
+      "trailLength": {
+        "type": "integer",
+        "title": "Signal Trail Length",
+        "default": 5,
+        "minimum": 0,
+        "maximum": 20
+      },
+      "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 10
+      },
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 10
+      }
+    }
+  },
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    { "type": "playAction", "duration": 0 },
+    { "type": "updateAction", "duration": 0 },
+    { "type": "stopAction", "duration": 0 }
+  ]
+}

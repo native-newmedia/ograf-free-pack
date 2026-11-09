@@ -1,0 +1,14 @@
+// Edit the values below and save. Then tick or untick "Reload Data" in the Inspector to re-read this file.
+// Comments (like these lines) are allowed in .jsonc files.
+{
+  "playerName": "xX_ProGamer_Xx",
+  "game": "VALORANT",
+  "kills": 18,
+  "deaths": 4,
+  "assists": 7,
+  "rank": "Diamond II",
+  "rankIcon": "💎",
+  "subscribers": 12400,
+  "viewers": 847,
+  "winStreak": 5
+}

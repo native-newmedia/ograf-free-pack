@@ -1,0 +1,157 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "weave-pattern",
+  "version": "1.0.0",
+  "name": "Weave Pattern",
+  "description": "Animated herringbone/weave background pattern (CSS adapted from a Uiverse.io snippet by marcelodolza) — two-colour zigzag radial-gradient tile that can scroll, rotate, and be used full-bleed or as a contained accent card.",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "weave-pattern.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": {
+    "duration": 10
+  },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "colorPrimary": {
+        "type": "string",
+        "title": "Colour 1",
+        "default": "#f8b195",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "colorSecondary": {
+        "type": "string",
+        "title": "Colour 2",
+        "default": "#355c7d",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "patternSize": {
+        "type": "number",
+        "title": "Pattern Tile Size (px)",
+        "default": 100,
+        "minimum": 20,
+        "maximum": 400
+      },
+      "scrollEnabled": {
+        "type": "boolean",
+        "title": "Animate Scroll",
+        "default": true
+      },
+      "scrollSpeedX": {
+        "type": "number",
+        "title": "Scroll Speed X (px/s)",
+        "default": 20,
+        "minimum": -400,
+        "maximum": 400
+      },
+      "scrollSpeedY": {
+        "type": "number",
+        "title": "Scroll Speed Y (px/s)",
+        "default": 20,
+        "minimum": -400,
+        "maximum": 400
+      },
+      "rotation": {
+        "type": "number",
+        "title": "Rotation (deg)",
+        "default": 0,
+        "minimum": -180,
+        "maximum": 180
+      },
+      "contained": {
+        "type": "boolean",
+        "title": "Contained Card (off = full-bleed background)",
+        "default": false
+      },
+      "cardWidth": {
+        "type": "number",
+        "title": "Card Width (px, contained only)",
+        "default": 480,
+        "minimum": 60,
+        "maximum": 1800
+      },
+      "cardHeight": {
+        "type": "number",
+        "title": "Card Height (px, contained only)",
+        "default": 300,
+        "minimum": 60,
+        "maximum": 1000
+      },
+      "cornerRadius": {
+        "type": "number",
+        "title": "Corner Radius (px, contained only)",
+        "default": 24,
+        "minimum": 0,
+        "maximum": 300
+      },
+      "posX": {
+        "type": "number",
+        "title": "Position X (px)",
+        "default": 0,
+        "minimum": -960,
+        "maximum": 960
+      },
+      "posY": {
+        "type": "number",
+        "title": "Position Y (px)",
+        "default": 0,
+        "minimum": -540,
+        "maximum": 540
+      },
+      "scale": {
+        "type": "number",
+        "title": "Scale",
+        "default": 1.0,
+        "minimum": 0.2,
+        "maximum": 3.0
+      },
+      "opacity": {
+        "type": "number",
+        "title": "Opacity",
+        "default": 1.0,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 10
+      },
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 0,
+        "minimum": 0,
+        "maximum": 10
+      },
+      "easePower": {
+        "type": "number",
+        "title": "Ease Power (1 = linear, 3 = cubic)",
+        "default": 3,
+        "minimum": 1,
+        "maximum": 6
+      }
+    }
+  },
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    { "type": "playAction", "duration": 0 },
+    { "type": "updateAction", "duration": 0 },
+    { "type": "stopAction", "duration": 0 }
+  ]
+}

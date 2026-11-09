@@ -1,0 +1,8 @@
+// Edit the values below and save. Then tick or untick "Reload Data" in the Inspector to re-read this file.
+// Comments (like these lines) are allowed in .jsonc files.
+{
+  "name": "Yuki Tanaka",
+  "title": "Senior Correspondent",
+  "location": "Berlin",
+  "live": true
+}

@@ -1,0 +1,65 @@
+{
+	Tools = ordered() {
+		Out_wave_interference = MediaOut {
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input {
+					SourceOp = "Merge_wave_interference",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 220, 33 } },
+		},
+		Merge_wave_interference = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "BG_wave_interference",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "OGrafLoader_wave_interference",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 110, 33 } },
+		},
+		OGrafLoader_wave_interference = OGrafLoader {
+			Inputs = {
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Wave Interference/Wave Interference.ograf.json", },
+				GlobalOut = Input { Value = 1440, },
+				TrimOut = Input { Value = 3599, },
+				TimeScale = Input { Value = 2.5, },
+				StopActionUserModified = Input { Value = 0, },
+				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
+				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
+				["ScheduledAction_1.Time"] = Input { Value = 1439, },
+				DynParamCheck1 = Input { Value = 1, },
+				DynParamColor2_R = Input { Value = 0.443137254901961, },
+				DynParamColor2_B = Input { Value = 0.415686274509804, },
+				DynParamColor3_B = Input { Value = 1, },
+				DynParamNum4 = Input { Value = 1, },
+				DynParamNum5 = Input { Value = 5, },
+				DynParamNum6 = Input { Value = 100, },
+				JSONLink = Input { Value = "{\n  \"$schema\": \"https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json\",\n  \"id\": \"wave-interference\",\n  \"version\": \"1.0.0\",\n  \"name\": \"Wave Interference\",\n  \"description\": \"Layered sine-wave interference patterns. Canvas RAF. goToTime maps to _time for NRT. Fixed: blank frame 0, loop in load().\",\n  \"author\": {\n    \"name\": \"Dunn Lewis\"\n  },\n  \"main\": \"wave-interference.js\",\n  \"supportsRealTime\": false,\n  \"supportsNonRealTime\": true,\n  \"stepCount\": 1,\n  \"v_bmd\": { \"duration\": 60 },\n  \"schema\": {\n    \"type\": \"object\",\n    \"additionalProperties\": false,\n    \"properties\": {\n      \"backgroundColor\": {\n        \"type\": \"string\",\n        \"title\": \"Background Color\",\n        \"default\": \"#000000ff\",\n        \"gddType\": \"color-rrggbbaa\",\n        \"pattern\": \"^#[0-9a-f]{8}$\"\n      },\n      \"showBackground\": {\n        \"type\": \"boolean\",\n        \"title\": \"Show Background\",\n        \"default\": true\n      },\n      \"colorStart\": {\n        \"type\": \"string\",\n        \"title\": \"Gradient Start Color\",\n        \"default\": \"#71006a\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n      \"colorEnd\": {\n        \"type\": \"string\",\n        \"title\": \"Gradient End Color\",\n        \"default\": \"#0000ff\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n      \"speed\": {\n        \"type\": \"number\",\n        \"title\": \"Wave Speed\",\n        \"default\": 1.0,\n        \"minimum\": 0.1,\n        \"maximum\": 5.0\n      },\n      \"complexity\": {\n        \"type\": \"integer\",\n        \"title\": \"Wave Complexity\",\n        \"default\": 5,\n        \"minimum\": 1,\n        \"maximum\": 20\n      },\n      \"amplitude\": {\n        \"type\": \"number\",\n        \"title\": \"Wave Amplitude\",\n        \"default\": 100,\n        \"minimum\": 10,\n        \"maximum\": 500\n      },\n      \"introDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Intro Duration (s)\",\n        \"default\": 0,\n        \"minimum\": 0,\n        \"maximum\": 10\n      },\n      \"outroDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Outro Duration (s)\",\n        \"default\": 0,\n        \"minimum\": 0,\n        \"maximum\": 10\n      }\n    }\n  },\n  \"renderRequirements\": [\n    {\n      \"frameRate\": {\n        \"ideal\": 60\n      }\n    }\n  ],\n  \"actionDurations\": [\n    { \"type\": \"playAction\", \"duration\": 0 },\n    { \"type\": \"updateAction\", \"duration\": 0 },\n    { \"type\": \"stopAction\", \"duration\": 0 }\n  ]\n}", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 110, 0 } },
+			UserControls = ordered() { JSONLink = { LINK_Main = 3, LINKID_DataType = "Text", INP_Default = 0, IC_ControlPage = -1, INPID_InputControl = "ImageControl", LINKS_Name = "JSON Link", } },
+			Version = 1
+		},
+		BG_wave_interference = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 226, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 33 } },
+		}
+	}
+}

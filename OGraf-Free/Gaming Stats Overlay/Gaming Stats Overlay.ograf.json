@@ -1,0 +1,157 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "gaming-overlay",
+  "version": "1.0.0",
+  "name": "Gaming Stats Overlay",
+  "description": "Esports/streaming HUD with K/D/A stats, rank, viewer count and win streak. Count-up animation driven by goToTime. +Kill/+Death live increment customActions.",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "gaming-overlay.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": {
+    "duration": 10
+  },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "dataFile": {
+        "type": "string",
+        "title": "Data File (path)",
+        "default": "data/stats.jsonc",
+        "gddType": "single-line"
+      },
+      "reloadData": {
+        "type": "boolean",
+        "title": "Reload Data (toggle to re-read)",
+        "default": false,
+        "description": "Tick or untick this box to make the graphic re-read the data file."
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Colour",
+        "default": "#a78bfa",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "title": "Background Color",
+        "default": "#08080cd9",
+        "gddType": "color-rrggbbaa",
+        "pattern": "^#[0-9a-f]{8}$"
+      },
+      "frameColor": {
+        "type": "string",
+        "title": "Accent Frame Color",
+        "default": "#a78bfaff",
+        "gddType": "color-rrggbbaa",
+        "pattern": "^#[0-9a-f]{8}$"
+      },
+      "showBackground": {
+        "type": "boolean",
+        "title": "Show Background",
+        "default": true
+      },
+      "showFrame": {
+        "type": "boolean",
+        "title": "Show Accent Frame",
+        "default": true
+      },
+      "showSubscribers": {
+        "type": "boolean",
+        "title": "Show Viewer Count",
+        "default": true
+      },
+      "showStreak": {
+        "type": "boolean",
+        "title": "Show Win Streak",
+        "default": true
+      },
+      "countDuration": {
+        "type": "number",
+        "title": "Count-up Duration (s)",
+        "default": 2.0,
+        "minimum": 0.1,
+        "maximum": 5.0
+      },
+      "scale": {
+        "type": "number",
+        "title": "Scale",
+        "default": 1.5,
+        "minimum": 0.1,
+        "maximum": 2.0
+      },
+      "stagger": {
+        "type": "number",
+        "title": "Stagger (s)",
+        "default": 0.15,
+        "minimum": 0,
+        "maximum": 2
+      },
+      "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 0.4,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 0.35,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+      "easePower": {
+        "type": "number",
+        "title": "Ease Power (1 = linear, 3 = cubic)",
+        "default": 3,
+        "minimum": 1,
+        "maximum": 6
+      }
+    }
+  },
+  "customActions": [
+    {
+      "id": "refresh",
+      "name": "Refresh Stats"
+    },
+    {
+      "id": "kill",
+      "name": "+1 Kill"
+    },
+    {
+      "id": "death",
+      "name": "+1 Death"
+    },
+    {
+      "id": "reset",
+      "name": "Reset Round"
+    }
+  ],
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    {
+      "type": "playAction",
+      "duration": 400
+    },
+    {
+      "type": "updateAction",
+      "duration": 0
+    },
+    {
+      "type": "stopAction",
+      "duration": 350
+    }
+  ]
+}

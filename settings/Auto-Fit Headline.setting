@@ -1,0 +1,94 @@
+{
+	Tools = ordered() {
+		Out_auto_fit_headlines = MediaOut {
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input {
+					SourceOp = "Merge_auto_fit_headlines",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 220, 33 } },
+		},
+		Merge_auto_fit_headlines = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "BG_auto_fit_headlines",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "OGrafLoader_auto_fit_headlines",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 110, 33 } },
+		},
+		OGrafLoader_auto_fit_headlines = OGrafLoader {
+			Inputs = {
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Auto-Fit Headline/Auto-Fit Headline.ograf.json", },
+				GlobalOut = Input { Value = 240, },
+				TrimOut = Input { Value = 599, },
+				TimeScale = Input { Value = 2.5, },
+				StopActionUserModified = Input { Value = 0, },
+				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
+				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
+				["ScheduledAction_1.Time"] = Input { Value = 215, },
+				DynParamText0 = Input { Value = "AUTO-FIT HEADLINES (ROBOTO FLEX) - SHORT HEADLINES EXPAND, LONG ONES CONDENSE WITHOUT LETTERFORM DISTORTION", },
+				DynParamCombo1 = Input {
+					SourceOp = "OGrafLoader_auto_fit_headlinesParameter",
+					Source = "Value",
+				},
+				DynParamColor3_R = Input { Value = 1, },
+				DynParamColor3_G = Input { Value = 1, },
+				DynParamColor3_B = Input { Value = 1, },
+				DynParamColor4_R = Input { Value = 1, },
+				DynParamColor4_G = Input { Value = 1, },
+				DynParamColor4_B = Input { Value = 1, },
+				DynParamColor5_R = Input { Value = 1, },
+				DynParamColor5_G = Input { Value = 0.72156862745098, },
+				DynParamNum6 = Input { Value = 100, },
+				DynParamNum7 = Input { Value = 100, },
+				DynParamNum8 = Input { Value = 62, },
+				DynParamNum9 = Input { Value = 125, },
+				DynParamText11 = Input { Value = "./RobotoFlex-Variable.ttf", },
+				DynParamNum12 = Input { Value = 6, },
+				DynParamNum13 = Input { Value = 50, },
+				DynParamNum14 = Input { Value = 0.15, },
+				DynParamNum15 = Input { Value = 1, },
+				DynParamNum16 = Input { Value = 1, },
+				JSONLink = Input { Value = "{\n  \"$schema\": \"https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json\",\n  \"id\": \"auto-fit-headlines\",\n  \"version\": \"1.0.0\",\n  \"name\": \"Auto-Fit Headline\",\n  \"description\": \"News headline that fills a fixed-width container by adjusting the Roboto Flex wdth axis (25-151) instead of CSS transform:scaleX() — the font is designed to look correct at every width, so short headlines expand and long ones condense without any letterform distortion. Weight is driven by an urgency preset (BREAKING/ALERT/UPDATE/DEVELOPING). Headline/subhead colors and sizes plus XY placement are all Inspector-controlled.\",\n  \"author\": {\n    \"name\": \"Dunn Lewis\"\n  },\n  \"main\": \"auto-fit-headlines.js\",\n  \"supportsRealTime\": false,\n  \"supportsNonRealTime\": true,\n  \"stepCount\": 1,\n  \"v_bmd\": {\n    \"duration\": 10\n  },\n  \"schema\": {\n    \"type\": \"object\",\n    \"additionalProperties\": false,\n    \"properties\": {\n      \"headlineText\": {\n        \"type\": \"string\",\n        \"title\": \"Headline\",\n        \"default\": \"AUTO-FIT HEADLINES (ROBOTO FLEX) - SHORT HEADLINES EXPAND, LONG ONES CONDENSE WITHOUT LETTERFORM DISTORTION\"\n      },\n      \"urgency\": {\n        \"type\": \"number\",\n        \"title\": \"Urgency\",\n        \"default\": 1,\n        \"minimum\": 1,\n        \"maximum\": 4,\n        \"enum\": [1, 2, 3, 4],\n        \"gddType\": \"select\",\n        \"gddOptions\": {\n          \"labels\": {\n            \"1\": \"Breaking\",\n            \"2\": \"Alert\",\n            \"3\": \"Update\",\n            \"4\": \"Developing\"\n          }\n        }\n      },\n      \"subheadText\": {\n        \"type\": \"string\",\n        \"title\": \"Subhead (multi-line)\",\n        \"default\": \"\"\n      },\n      \"headlineColor\": {\n        \"type\": \"string\",\n        \"title\": \"Headline Color\",\n        \"default\": \"#ffffff\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n      \"subheadColor\": {\n        \"type\": \"string\",\n        \"title\": \"Subhead Color\",\n        \"default\": \"#ffffff\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n       \"accentColor\": {\n        \"type\": \"string\",\n        \"title\": \"Accent Color\",\n        \"default\": \"#ffb800\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n      \"headlineSize\": {\n        \"type\": \"number\",\n        \"title\": \"Headline Size (%)\",\n        \"default\": 100,\n        \"minimum\": 25,\n        \"maximum\": 300\n      },\n      \"urgencySize\": {\n        \"type\": \"number\",\n        \"title\": \"Urgency Size (%)\",\n        \"default\": 100,\n        \"minimum\": 25,\n        \"maximum\": 300\n      },\n      \"minWdth\": {\n        \"type\": \"integer\",\n        \"title\": \"Min Width (auto-fit floor, 25-100)\",\n        \"default\": 62,\n        \"minimum\": 25,\n        \"maximum\": 100\n      },\n      \"maxWdth\": {\n        \"type\": \"integer\",\n        \"title\": \"Max Width (auto-fit ceiling, 100-151)\",\n        \"default\": 125,\n        \"minimum\": 100,\n        \"maximum\": 151\n      },\n \n      \"manualWdth\": {\n        \"type\": \"integer\",\n        \"title\": \"Manual Width (0 = auto-fit, else 25-151)\",\n        \"default\": 0,\n        \"minimum\": 0,\n        \"maximum\": 151\n      },\n      \"fontUrl\": {\n        \"type\": \"string\",\n        \"title\": \"Variable Font File\",\n        \"gddType\": \"file-path\",\n        \"gddOptions\": {\n          \"extensions\": [\n            \".woff2\",\n            \".woff\",\n            \".ttf\"\n          ]\n        },\n        \"default\": \"./RobotoFlex-Variable.ttf\"\n      },\n      \"posX\": {\n        \"type\": \"number\",\n        \"title\": \"X Position (% from left)\",\n        \"default\": 6,\n        \"minimum\": 0,\n        \"maximum\": 100\n      },\n      \"posY\": {\n        \"type\": \"number\",\n        \"title\": \"Y Position (% from top, centre)\",\n        \"default\": 50,\n        \"minimum\": 0,\n        \"maximum\": 100\n      },\n      \"stagger\": {\n        \"type\": \"number\",\n        \"title\": \"Stagger (s)\",\n        \"default\": 0.15,\n        \"minimum\": 0,\n        \"maximum\": 2\n      },\n        \"introDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Intro Duration (s)\",\n        \"default\": 1,\n        \"minimum\": 0.2,\n        \"maximum\": 10\n      },\n      \"outroDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Outro Duration (s)\",\n        \"default\": 1,\n        \"minimum\": 0.2,\n        \"maximum\": 10\n      },\n      \"showDebug\": {\n        \"type\": \"boolean\",\n        \"title\": \"Show Debug Text\",\n        \"default\": false\n      }\n    }\n  },\n  \"customActions\": [\n    {\n      \"id\": \"refresh\",\n      \"name\": \"Reload Font\"\n    }\n  ],\n  \"renderRequirements\": [\n    {\n      \"frameRate\": {\n        \"ideal\": 60\n      }\n    }\n  ],\n  \"actionDurations\": [\n    { \"type\": \"playAction\", \"duration\": 1000 },\n    { \"type\": \"updateAction\", \"duration\": 0 },\n    { \"type\": \"stopAction\", \"duration\": 1000 }\n  ]\n}\n", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 110, 0 } },
+			UserControls = ordered() { JSONLink = { LINK_Main = 3, LINKID_DataType = "Text", INP_Default = 0, IC_ControlPage = -1, INPID_InputControl = "ImageControl", LINKS_Name = "JSON Link", } },
+			Version = 1
+		},
+		OGrafLoader_auto_fit_headlinesParameter = BezierSpline {
+			SplineColor = { Red = 59, Green = 236, Blue = 6 },
+			CtrlWZoom = false,
+			NameSet = true,
+			KeyFrames = {
+				[50] = { 0, RH = { 50.3333333333333, 0.333333333333333 }, Flags = { LockedY = true }, Value = FuID { "1" } },
+				[51] = { 1, LH = { 50.6666666666667, 0.666666666666667 }, RH = { 59, 1.33333333333333 }, Flags = { LockedY = true }, Value = FuID { "2" } },
+				[75] = { 2, LH = { 67, 1.66666666666667 }, RH = { 75.3333333333333, 2.33333333333333 }, Flags = { LockedY = true }, Value = FuID { "2" } },
+				[76] = { 3, LH = { 75.6666666666667, 2.66666666666667 }, RH = { 82.3333333333333, 3.33333333333333 }, Flags = { LockedY = true }, Value = FuID { "3" } },
+				[95] = { 4, LH = { 88.6666666666667, 3.66666666666667 }, RH = { 95.3333333333333, 4.33333333333333 }, Flags = { LockedY = true }, Value = FuID { "3" } },
+				[96] = { 5, LH = { 95.6666666666667, 4.66666666666667 }, Flags = { LockedY = true }, Value = FuID { "4" } }
+			}
+		},
+		BG_auto_fit_headlines = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 226, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 33 } },
+		}
+	}
+}

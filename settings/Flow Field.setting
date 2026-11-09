@@ -1,0 +1,69 @@
+{
+	Tools = ordered() {
+		Out_flow_field = MediaOut {
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input {
+					SourceOp = "Merge_flow_field",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 220, 33 } },
+		},
+		Merge_flow_field = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "BG_flow_field",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "OGrafLoader_flow_field",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 110, 33 } },
+		},
+		OGrafLoader_flow_field = OGrafLoader {
+			Inputs = {
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Flow Field/Flow Field.ograf.json", },
+				GlobalOut = Input { Value = 1440, },
+				TrimOut = Input { Value = 3599, },
+				TimeScale = Input { Value = 2.5, },
+				StopActionUserModified = Input { Value = 0, },
+				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
+				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
+				["ScheduledAction_1.Time"] = Input { Value = 1439, },
+				DynParamColor0_G = Input { Value = 1, },
+				DynParamColor0_B = Input { Value = 1, },
+				DynParamColor1_R = Input { Value = 1, },
+				DynParamColor1_B = Input { Value = 1, },
+				DynParamNum2 = Input { Value = 1000, },
+				DynParamColor3_R = Input { Value = 0.0196078431372549, },
+				DynParamColor3_G = Input { Value = 0.0196078431372549, },
+				DynParamColor3_B = Input { Value = 0.0627450980392157, },
+				DynParamCheck4 = Input { Value = 1, },
+				DynParamNum5 = Input { Value = 1, },
+				DynParamNum6 = Input { Value = 3.306, },
+				JSONLink = Input { Value = "{\n  \"$schema\": \"https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json\",\n  \"id\": \"flow-field\",\n  \"version\": \"1.0.0\",\n  \"name\": \"Flow Field\",\n  \"description\": \"Simplex noise flow field with blurred background grid + particle layer. Canvas RAF. goToTime maps to _time for NRT.\",\n  \"author\": {\n    \"name\": \"Dunn Lewis\"\n  },\n  \"main\": \"flow-field.js\",\n  \"supportsRealTime\": false,\n  \"supportsNonRealTime\": true,\n  \"stepCount\": 1,\n  \"v_bmd\": { \"duration\": 60 },\n  \"schema\": {\n    \"type\": \"object\",\n    \"additionalProperties\": false,\n    \"properties\": {\n      \"color1\": {\n        \"type\": \"string\",\n        \"title\": \"Particle Color 1\",\n        \"default\": \"#00ffff\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n      \"color2\": {\n        \"type\": \"string\",\n        \"title\": \"Particle Color 2\",\n        \"default\": \"#ff00ff\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n      \"particleCount\": {\n        \"type\": \"integer\",\n        \"title\": \"Particle Count\",\n        \"default\": 1000,\n        \"minimum\": 100,\n        \"maximum\": 5000\n      },\n      \"backgroundColor\": {\n        \"type\": \"string\",\n        \"title\": \"Background Color\",\n        \"default\": \"#050510ff\",\n        \"gddType\": \"color-rrggbbaa\",\n        \"pattern\": \"^#[0-9a-f]{8}$\"\n      },\n      \"showBackground\": {\n        \"type\": \"boolean\",\n        \"title\": \"Show Background\",\n        \"default\": true\n      },\n      \"speed\": {\n        \"type\": \"number\",\n        \"title\": \"Flow Speed\",\n        \"default\": 1.0,\n        \"minimum\": 0.1,\n        \"maximum\": 5.0\n      },\n      \"scale\": {\n        \"type\": \"number\",\n        \"title\": \"Noise Scale\",\n        \"default\": 3.306,\n        \"minimum\": 0.2,\n        \"maximum\": 5.0\n      },\n      \"introDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Intro Duration (s)\",\n        \"default\": 0,\n        \"minimum\": 0,\n        \"maximum\": 10\n      },\n      \"outroDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Outro Duration (s)\",\n        \"default\": 0,\n        \"minimum\": 0,\n        \"maximum\": 10\n      }\n    }\n  },\n  \"renderRequirements\": [\n    {\n      \"frameRate\": {\n        \"ideal\": 60\n      }\n    }\n  ],\n  \"actionDurations\": [\n    { \"type\": \"playAction\", \"duration\": 0 },\n    { \"type\": \"updateAction\", \"duration\": 0 },\n    { \"type\": \"stopAction\", \"duration\": 0 }\n  ]\n}", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 110, 0 } },
+			UserControls = ordered() { JSONLink = { LINK_Main = 3, LINKID_DataType = "Text", INP_Default = 0, IC_ControlPage = -1, INPID_InputControl = "ImageControl", LINKS_Name = "JSON Link", } },
+			Version = 1
+		},
+		BG_flow_field = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 226, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 33 } },
+		}
+	}
+}

@@ -1,0 +1,234 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "neumorphic-pulse",
+  "version": "1.0.0",
+  "name": "Neumorphic Pulse",
+  "description": "Soft-UI neumorphic panel that raises in, periodically presses/releases like a button, then raises back out.",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "neumorphic-pulse.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": {
+    "duration": 10
+  },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "label": {
+        "type": "string",
+        "title": "Label",
+        "gddType": "single-line",
+        "default": "Confirm"
+      },
+      "bgColor": {
+        "type": "string",
+        "title": "Panel Colour",
+        "default": "#e0e5ec",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Icon / Label Colour",
+        "default": "#000000",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "shape": {
+        "type": "integer",
+        "title": "Shape",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 3,
+        "enum": [1, 2, 3],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "1": "Rounded Square",
+            "2": "Circle",
+            "3": "Pill"
+          }
+        }
+      },
+      "neuShape": {
+        "type": "integer",
+        "title": "Neumorphic Shape",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 4,
+        "enum": [1, 2, 3, 4],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "1": "Flat",
+            "2": "Concave",
+            "3": "Convex",
+            "4": "Pressed"
+          }
+        }
+      },
+      "lightSource": {
+        "type": "integer",
+        "title": "Light Source",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 4,
+        "enum": [1, 2, 3, 4],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "1": "Top-Left",
+            "2": "Top-Right",
+            "3": "Bottom-Right",
+            "4": "Bottom-Left"
+          }
+        }
+      },
+      "size": {
+        "type": "number",
+        "title": "Size (px)",
+        "default": 409.4,
+        "minimum": 60,
+        "maximum": 600
+      },
+      "cornerRadius": {
+        "type": "number",
+        "title": "Corner Radius (px, rounded-square only)",
+        "default": 33.7,
+        "minimum": 0,
+        "maximum": 300
+      },
+      "shadowDistance": {
+        "type": "number",
+        "title": "Shadow Distance (px)",
+        "default": 26.46,
+        "minimum": 4,
+        "maximum": 60
+      },
+      "pressDepth": {
+        "type": "number",
+        "title": "Shadow Contrast",
+        "default": 0.7,
+        "minimum": 0.1,
+        "maximum": 1.0
+      },
+      "iconType": {
+        "type": "integer",
+        "title": "Icon",
+        "default": 2,
+        "minimum": 1,
+        "maximum": 6,
+        "enum": [1, 2, 3, 4, 5, 6],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "1": "None",
+            "2": "Check",
+            "3": "Heart",
+            "4": "Power",
+            "5": "Lock",
+            "6": "Star"
+          }
+        }
+      },
+      "showLabel": {
+        "type": "boolean",
+        "title": "Show Label",
+        "default": true
+      },
+      "pulseEnabled": {
+        "type": "boolean",
+        "title": "Auto Press/Release Pulse",
+        "default": true
+      },
+      "pulseInterval": {
+        "type": "number",
+        "title": "Pulse Interval (s)",
+        "default": 2.2,
+        "minimum": 0.3,
+        "maximum": 20
+      },
+      "pulseDuration": {
+        "type": "number",
+        "title": "Press Duration (s)",
+        "default": 0.6,
+        "minimum": 0.1,
+        "maximum": 10
+      },
+      "posX": {
+        "type": "number",
+        "title": "Position X (px)",
+        "default": 0,
+        "minimum": -960,
+        "maximum": 960
+      },
+      "posY": {
+        "type": "number",
+        "title": "Position Y (px)",
+        "default": 0,
+        "minimum": -540,
+        "maximum": 540
+      },
+      "scale": {
+        "type": "number",
+        "title": "Scale",
+        "default": 1.0,
+        "minimum": 0.1,
+        "maximum": 3.0
+      },
+      "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 0.7,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+       "easePower": {
+        "type": "number",
+        "title": "Ease Power (1 = linear, 3 = cubic)",
+        "default": 3,
+        "minimum": 1,
+        "maximum": 6
+      },
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 0.5,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+
+      "bridgeJson": {
+        "type": "string",
+        "title": "Bridge JSON (set by vOGrafManifestUI Fuse)",
+        "description": "Values of every property after this one, as JSON. OGrafLoader shows only 20 properties, so vOGrafManifestUI writes the rest here. Leave empty to use the defaults.",
+        "default": ""
+      }
+    }
+  },
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    {
+      "type": "playAction",
+      "duration": 700
+    },
+    {
+      "type": "updateAction",
+      "duration": 0
+    },
+    {
+      "type": "stopAction",
+      "duration": 500
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "json-lower-third",
+  "version": "1.0.0",
+  "name": "JSON Lower Third",
+  "description": "Name + title loaded from data/data.txt on disk. The file holds JSON but uses a .txt extension so Resolve does not list it as a title. Edit it, or point Data File at your own file.",
+  "author": {
+    "name": "Dunn Lewis"
+  },
+  "main": "json-lower-third.js",
+  "supportsRealTime": false,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "v_bmd": {
+    "duration": 10
+  },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "dataFile": {
+        "type": "string",
+        "title": "Data File (path)",
+        "default": "data/data.jsonc",
+        "gddType": "single-line"
+      },
+      "reloadData": {
+        "type": "boolean",
+        "title": "Reload Data (toggle to re-read)",
+        "default": false,
+        "description": "Tick or untick this box to make the graphic re-read the data file."
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Colour",
+        "default": "#00d2ff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "nameColor": {
+        "type": "string",
+        "title": "Name Colour",
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "titleColor": {
+        "type": "string",
+        "title": "Title Colour",
+        "default": "#c9c9c9",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "locationColor": {
+        "type": "string",
+        "title": "Location Colour",
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "liveBugColor": {
+        "type": "string",
+        "title": "Live Bug Text Colour",
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "liveBugBgColor": {
+        "type": "string",
+        "title": "Live Bug Background Colour",
+        "default": "#e53030",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "locationOpacity": {
+        "type": "number",
+        "title": "Location Opacity",
+        "default": 0.45,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "showLocation": {
+        "type": "boolean",
+        "title": "Show Location",
+        "default": true
+      },
+      "showAccentBar": {
+        "type": "boolean",
+        "title": "Show Accent Bar",
+        "default": true
+      },
+      "showLiveBug": {
+        "type": "boolean",
+        "title": "Show Live Bug",
+        "default": true
+      },
+      "scale": {
+        "type": "number",
+        "title": "Scale",
+        "default": 1.5,
+        "minimum": 0.1,
+        "maximum": 2.0
+      },
+      "stagger": {
+        "type": "number",
+        "title": "Stagger (s)",
+        "default": 0.12,
+        "minimum": 0,
+        "maximum": 1.0
+      },
+      "introDuration": {
+        "type": "number",
+        "title": "Intro Duration (s)",
+        "default": 0.6,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+      "outroDuration": {
+        "type": "number",
+        "title": "Outro Duration (s)",
+        "default": 0.4,
+        "minimum": 0.2,
+        "maximum": 10
+      },
+      "easePower": {
+        "type": "number",
+        "title": "Ease Power (1 = linear, 3 = cubic)",
+        "default": 3,
+        "minimum": 1,
+        "maximum": 6
+      }
+    }
+  },
+  "renderRequirements": [
+    {
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    {
+      "type": "playAction",
+      "duration": 600
+    },
+    {
+      "type": "updateAction",
+      "duration": 0
+    },
+    {
+      "type": "stopAction",
+      "duration": 400
+    }
+  ]
+}
