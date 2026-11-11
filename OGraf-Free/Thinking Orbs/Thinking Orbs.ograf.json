@@ -3,7 +3,7 @@
     "id": "thinking-orbs-ograf",
     "version": "1.0.0",
     "name": "Thinking Orbs",
-    "description": "Dotted thought-orb spinner for AI/agent states — all nine states of thinking-orbs (github.com/Jakubantalik/thinking-orbs, MIT): 1 working, 2 searching, 3 solving, 4 listening, 5 connecting, 6 weaving, 7 composing, 8 breathing, 9 shaping. Geometry is verified against the library's own golden vectors (72 frames). The Inspector carries only settings that mean the same thing for every state; the per-state hand-tuning ships in orbs-tuning.jsonc. Draws NO text — the orb is an overlay to be captioned by the host.",
+    "description": "Dotted thought-orb spinner for AI/agent states; all nine states of thinking-orbs (github.com/Jakubantalik/thinking-orbs, MIT): 1 working, 2 searching, 3 solving, 4 listening, 5 connecting, 6 weaving, 7 composing, 8 breathing, 9 shaping. Geometry is verified against the library's own golden vectors (72 frames). The Inspector carries only settings that mean the same thing for every state; the per-state hand-tuning ships in orbs-tuning.jsonc. Draws NO text: the orb is an overlay to be captioned by the host.",
     "author": { "name": "Dunn Lewis" },
     "main": "thinking-orbs-ograf.js",
     "supportsRealTime": false,
@@ -17,7 +17,7 @@
 
             "orbState": {
                 "type": "integer",
-                "title": "Orb State \u2014 1 working  2 searching  3 solving  4 listening  5 connecting  6 weaving  7 composing  8 breathing  9 shaping",
+                "title": "Orb State: 1 working  2 searching  3 solving  4 listening  5 connecting  6 weaving  7 composing  8 breathing  9 shaping",
                 "default": 2,
                 "minimum": 1,
                 "maximum": 9
@@ -83,14 +83,14 @@
             },
             "inkBrightColor": {
                 "type": "string",
-                "title": "Ink \u2014 Bright End (tint here)",
+                "title": "Ink: Bright End (tint here)",
                 "default": "#ffffff",
                 "gddType": "color-rrggbb",
                 "pattern": "^#[0-9a-f]{6}$"
             },
             "inkDimColor": {
                 "type": "string",
-                "title": "Ink \u2014 Dim End (raise to lift the far side)",
+                "title": "Ink: Dim End (raise to lift the far side)",
                 "default": "#000000",
                 "gddType": "color-rrggbb",
                 "pattern": "^#[0-9a-f]{6}$"

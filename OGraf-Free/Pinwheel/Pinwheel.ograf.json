@@ -3,7 +3,7 @@
   "id": "pinwheel",
   "version": "1.0.0",
   "name": "Pinwheel",
-  "description": "Animated four-colour pinwheel pattern (seamless SVG tile, adapted from a Uiverse.io conic-gradient snippet) — the tiled pattern scrolls continuously across the frame at independent X/Y speeds with no tile seams. Full-bleed or contained accent card.",
+  "description": "Animated four-colour pinwheel pattern (seamless SVG tile, adapted from a Uiverse.io conic-gradient snippet): the tiled pattern scrolls continuously across the frame at independent X/Y speeds with no tile seams. Full-bleed or contained accent card.",
   "author": {
     "name": "Dunn Lewis"
   },

@@ -58,7 +58,7 @@
       "dataIndex": {
         "type": "integer",
         "title": "Data Entry",
-        "description": "Person to show from data/lower-third.json (matches the number in the corner counter). Maximum should equal the record count in the JSON file — raise it if you add people.",
+        "description": "Person to show from data/lower-third.json (matches the number in the corner counter). Maximum should equal the record count in the JSON file; raise it if you add people.",
         "default": 1,
         "minimum": 1,
         "maximum": 6

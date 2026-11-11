@@ -1,12 +1,12 @@
 Composition {
 	CurrentTime = 95,
-	RenderRange = { 0, 226 },
-	GlobalRange = { 0, 226 },
-	CurrentID = 482,
+	RenderRange = { 0, 299 },
+	GlobalRange = { 0, 299 },
+	CurrentID = 188,
 	HiQ = true,
 	PlaybackUpdateMode = 0,
 	StereoMode = false,
-	Version = "DaVinci Resolve 21.1.2.0010",
+	Version = "DaVinci Resolve 21.2.0.0006",
 	SavedOutputs = 0,
 	HeldTools = 0,
 	DisabledTools = 0,
@@ -17,9 +17,9 @@ Composition {
 	},
 	CustomData = { TEMPLATE_ID = "Fusion Generator" },
 	Tools = {
-		BG_ab_switcher = Background {
+		BG_Auto_Fit_Headline = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -27,125 +27,21 @@ Composition {
 			},
 			ViewInfo = OperatorInfo { Pos = { 55, 16.5 } },
 		},
-		OGrafLoader_ab_switcher = OGrafLoader {
-			Inputs = {
-				Width = Input { Value = 1920, },
-				Height = Input { Value = 1080, },
-				UseFrameFormatSettings = Input { Value = 1, },
-				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Lower Third Switcher/Lower Third Switcher.ograf.json", },
-				GlobalOut = Input { Value = 240, },
-				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
-				ScheduledActions = Input { Value = 1, },
-				StopActionUserModified = Input { Value = 0, },
-				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
-				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 230, },
-				["ScheduledAction_2.Name"] = Input { Value = "customAction", },
-				["ScheduledAction_2.Value"] = Input { Value = ScriptVal { {
-							name = "Switch to B",
-							id = "b",
-							payload = {
-							}
-						} }, },
-				["ScheduledAction_2.Time"] = Input { Value = 50, },
-				["ScheduledAction_3.Name"] = Input { Value = "customAction", },
-				["ScheduledAction_3.Value"] = Input { Value = ScriptVal { {
-							name = "Switch to A",
-							id = "a",
-							payload = {
-							}
-						} }, },
-				["ScheduledAction_3.Time"] = Input { Value = 70, },
-				["ScheduledAction_4.Name"] = Input { Value = "customAction", },
-				["ScheduledAction_4.Value"] = Input { Value = ScriptVal { {
-							name = "Switch to B",
-							id = "b",
-							payload = {
-							}
-						} }, },
-				["ScheduledAction_4.Time"] = Input { Value = 90, },
-				["ScheduledAction_5.Name"] = Input { Value = "customAction", },
-				["ScheduledAction_5.Value"] = Input { Value = ScriptVal { {
-							name = "Switch to A",
-							id = "a",
-							payload = {
-							}
-						} }, },
-				["ScheduledAction_5.Time"] = Input { Value = 110, },
-				DynParamNum0 = Input { Value = 1, },
-				DynParamText1 = Input { Value = "Sarah Johnson", },
-				DynParamText2 = Input { Value = "CEO, Acme Corp", },
-				DynParamText3 = Input { Value = "London", },
-				DynParamText4 = Input { Value = "James Chen", },
-				DynParamText5 = Input { Value = "CTO, Acme Corp", },
-				DynParamText6 = Input { Value = "New York", },
-				DynParamColor7_G = Input { Value = 0.823529411764706, },
-				DynParamColor7_B = Input { Value = 1, },
-				DynParamNum8 = Input { Value = 0.88, },
-				DynParamNum9 = Input { Value = 1.5, },
-				DynParamNum10 = Input { Value = 0.15, },
-				DynParamNum11 = Input { Value = 3, },
-				DynParamNum12 = Input { Value = 0.5, },
-				DynParamNum13 = Input { Value = 0.4, }
-			},
-			ViewInfo = OperatorInfo { Pos = { 165, -16.5 } },
-			Version = 1
-		},
-		Merge_ab_switcher = Merge {
-			Inputs = {
-				Background = Input {
-					SourceOp = "BG_ab_switcher",
-					Source = "Output",
-				},
-				Foreground = Input {
-					SourceOp = "OGrafLoader_ab_switcher",
-					Source = "Output",
-				},
-				PerformDepthMerge = Input { Value = 0, }
-			},
-			ViewInfo = OperatorInfo { Pos = { 165, 16.5 } },
-		},
-		Out_ab_switcher = Saver {
-			Inputs = {
-				Index = Input { Value = "0", },
-				Input = Input {
-					SourceOp = "Merge_ab_switcher",
-					Source = "Output",
-				}
-			},
-			ViewInfo = OperatorInfo { Pos = { 275, 16.5 } },
-		},
-		BG_auto_fit_headlines = Background {
-			Inputs = {
-				GlobalOut = Input { Value = 226, },
-				Width = Input { Value = 1920, },
-				Height = Input { Value = 1080, },
-				UseFrameFormatSettings = Input { Value = 1, },
-				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
-			},
-			ViewInfo = OperatorInfo { Pos = { 495, 16.5 } },
-		},
-		OGrafLoader_auto_fit_headlines = OGrafLoader {
+		OGrafLoader_Auto_Fit_Headline = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Auto-Fit Headline/Auto-Fit Headline.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 215, },
+				["ScheduledAction_1.Time"] = Input { Value = 539, },
 				DynParamText0 = Input { Value = "AUTO-FIT HEADLINES (ROBOTO FLEX) - SHORT HEADLINES EXPAND, LONG ONES CONDENSE WITHOUT LETTERFORM DISTORTION", },
-				DynParamCombo1 = Input {
-					SourceOp = "OGrafLoader_auto_fit_headlinesParameter",
-					Source = "Value",
-				},
+				DynParamCombo1 = Input { Value = FuID { "1" }, },
 				DynParamColor3_R = Input { Value = 1, },
 				DynParamColor3_G = Input { Value = 1, },
 				DynParamColor3_B = Input { Value = 1, },
@@ -165,70 +61,56 @@ Composition {
 				DynParamNum15 = Input { Value = 1, },
 				DynParamNum16 = Input { Value = 1, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 605, -16.5 } },
+			ViewInfo = OperatorInfo { Pos = { 165, -16.5 } },
 			Version = 1
 		},
-		OGrafLoader_auto_fit_headlinesParameter = BezierSpline {
-			SplineColor = { Red = 59, Green = 236, Blue = 6 },
-			CtrlWZoom = false,
-			NameSet = true,
-			KeyFrames = {
-				[50] = { 0, RH = { 50.3333333333333, 0.333333333333333 }, Flags = { LockedY = true }, Value = FuID { "1" } },
-				[51] = { 1, LH = { 50.6666666666667, 0.666666666666667 }, RH = { 59, 1.33333333333333 }, Flags = { LockedY = true }, Value = FuID { "2" } },
-				[75] = { 2, LH = { 67, 1.66666666666667 }, RH = { 75.3333333333333, 2.33333333333333 }, Flags = { LockedY = true }, Value = FuID { "2" } },
-				[76] = { 3, LH = { 75.6666666666667, 2.66666666666667 }, RH = { 82.3333333333333, 3.33333333333333 }, Flags = { LockedY = true }, Value = FuID { "3" } },
-				[95] = { 4, LH = { 88.6666666666667, 3.66666666666667 }, RH = { 95.3333333333333, 4.33333333333333 }, Flags = { LockedY = true }, Value = FuID { "3" } },
-				[96] = { 5, LH = { 95.6666666666667, 4.66666666666667 }, Flags = { LockedY = true }, Value = FuID { "4" } }
-			}
-		},
-		Merge_auto_fit_headlines = Merge {
+		Merge_Auto_Fit_Headline = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_auto_fit_headlines",
+					SourceOp = "BG_Auto_Fit_Headline",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_auto_fit_headlines",
+					SourceOp = "OGrafLoader_Auto_Fit_Headline",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 605, 16.5 } },
+			ViewInfo = OperatorInfo { Pos = { 165, 16.5 } },
 		},
-		Out_auto_fit_headlines = Saver {
+		Out_Auto_Fit_Headline = Saver {
 			Inputs = {
-				Index = Input { Value = "1", },
+				Index = Input { Value = "0", },
 				Input = Input {
-					SourceOp = "Merge_auto_fit_headlines",
+					SourceOp = "Merge_Auto_Fit_Headline",
 					Source = "Output",
 				}
 			},
-			ViewInfo = OperatorInfo { Pos = { 715, 16.5 } },
+			ViewInfo = OperatorInfo { Pos = { 275, 16.5 } },
 		},
-		BG_cyber_grid = Background {
+		BG_Cyber_Grid = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 935, 16.5 } },
+			ViewInfo = OperatorInfo { Pos = { 495, 16.5 } },
 		},
-		OGrafLoader_cyber_grid = OGrafLoader {
+		OGrafLoader_Cyber_Grid = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Cyber Grid/Cyber Grid.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 239, },
+				["ScheduledAction_1.Time"] = Input { Value = 599, },
 				DynParamColor0_R = Input { Value = 0.0196078431372549, },
 				DynParamColor0_G = Input { Value = 0.0196078431372549, },
 				DynParamColor0_B = Input { Value = 0.0196078431372549, },
@@ -249,90 +131,56 @@ Composition {
 				DynParamNum11 = Input { Value = 10, },
 				DynParamNum16 = Input { Value = 3, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1045, -16.5 } },
+			ViewInfo = OperatorInfo { Pos = { 605, -16.5 } },
 			Version = 1
 		},
-		Merge_cyber_grid = Merge {
+		Merge_Cyber_Grid = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_cyber_grid",
+					SourceOp = "BG_Cyber_Grid",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_cyber_grid",
+					SourceOp = "OGrafLoader_Cyber_Grid",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1045, 16.5 } },
+			ViewInfo = OperatorInfo { Pos = { 605, 16.5 } },
 		},
-		Out_cyber_grid = Saver {
+		Out_Cyber_Grid = Saver {
 			Inputs = {
-				Index = Input { Value = "2", },
+				Index = Input { Value = "1", },
 				Input = Input {
-					SourceOp = "Merge_cyber_grid",
+					SourceOp = "Merge_Cyber_Grid",
 					Source = "Output",
 				}
 			},
-			ViewInfo = OperatorInfo { Pos = { 1155, 16.5 } },
+			ViewInfo = OperatorInfo { Pos = { 715, 16.5 } },
 		},
-		BG_data_driven_lower_third = Background {
+		BG_Data_Lower_Third = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1375, 16.5 } },
+			ViewInfo = OperatorInfo { Pos = { 935, 16.5 } },
 		},
-		OGrafLoader_data_driven_lower_third = OGrafLoader {
+		OGrafLoader_Data_Lower_Third = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Data Lower Third/Data Lower Third.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
-				ScheduledActions = Input { Value = 1, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 230, },
-				["ScheduledAction_2.Name"] = Input { Value = "customAction", },
-				["ScheduledAction_2.Value"] = Input { Value = ScriptVal { {
-							name = "Next",
-							id = "next",
-							payload = {
-							}
-						} }, },
-				["ScheduledAction_2.Time"] = Input { Value = 30, },
-				["ScheduledAction_3.Name"] = Input { Value = "customAction", },
-				["ScheduledAction_3.Value"] = Input { Value = ScriptVal { {
-							name = "Next",
-							id = "next",
-							payload = {
-							}
-						} }, },
-				["ScheduledAction_3.Time"] = Input { Value = 50, },
-				["ScheduledAction_4.Name"] = Input { Value = "customAction", },
-				["ScheduledAction_4.Value"] = Input { Value = ScriptVal { {
-							name = "Next",
-							id = "next",
-							payload = {
-							}
-						} }, },
-				["ScheduledAction_4.Time"] = Input { Value = 70, },
-				["ScheduledAction_5.Name"] = Input { Value = "customAction", },
-				["ScheduledAction_5.Value"] = Input { Value = ScriptVal { {
-							name = "Next",
-							id = "next",
-							payload = {
-							}
-						} }, },
-				["ScheduledAction_5.Time"] = Input { Value = 95, },
+				["ScheduledAction_1.Time"] = Input { Value = 575, },
 				DynParamText0 = Input { Value = "data/lower-third.jsonc", },
 				DynParamText2 = Input { Value = "Jane Smith", },
 				DynParamText3 = Input { Value = "Senior Correspondent", },
@@ -358,57 +206,56 @@ Composition {
 				DynParamNum18 = Input { Value = 0.4, },
 				DynParamNum19 = Input { Value = 3, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1485, -16.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1045, -16.5 } },
 			Version = 1
 		},
-		Merge_data_driven_lower_third = Merge {
+		Merge_Data_Lower_Third = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_data_driven_lower_third",
+					SourceOp = "BG_Data_Lower_Third",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_data_driven_lower_third",
+					SourceOp = "OGrafLoader_Data_Lower_Third",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1485, 16.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1045, 16.5 } },
 		},
-		Out_data_driven_lower_third = Saver {
+		Out_Data_Lower_Third = Saver {
 			Inputs = {
-				Index = Input { Value = "3", },
+				Index = Input { Value = "2", },
 				Input = Input {
-					SourceOp = "Merge_data_driven_lower_third",
+					SourceOp = "Merge_Data_Lower_Third",
 					Source = "Output",
 				}
 			},
-			ViewInfo = OperatorInfo { Pos = { 1595, 16.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1155, 16.5 } },
 		},
-		BG_digital_circuit = Background {
+		BG_Digital_Circuit = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 55, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1375, 16.5 } },
 		},
-		OGrafLoader_digital_circuit = OGrafLoader {
+		OGrafLoader_Digital_Circuit = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Digital Circuit/Digital Circuit.ograf.json", },
-				GlobalOut = Input { Value = 1440, },
+				GlobalOut = Input { Value = 3599, },
 				TrimOut = Input { Value = 3599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 1439, },
+				["ScheduledAction_1.Time"] = Input { Value = 3599, },
 				DynParamColor0_R = Input { Value = 0.101960784313725, },
 				DynParamColor0_G = Input { Value = 0.101960784313725, },
 				DynParamColor0_B = Input { Value = 0.180392156862745, },
@@ -424,57 +271,56 @@ Composition {
 				DynParamNum7 = Input { Value = 1, },
 				DynParamNum8 = Input { Value = 5, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 165, 82.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1485, -16.5 } },
 			Version = 1
 		},
-		Merge_digital_circuit = Merge {
+		Merge_Digital_Circuit = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_digital_circuit",
+					SourceOp = "BG_Digital_Circuit",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_digital_circuit",
+					SourceOp = "OGrafLoader_Digital_Circuit",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 165, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1485, 16.5 } },
 		},
-		Out_digital_circuit = Saver {
+		Out_Digital_Circuit = Saver {
 			Inputs = {
-				Index = Input { Value = "4", },
+				Index = Input { Value = "3", },
 				Input = Input {
-					SourceOp = "Merge_digital_circuit",
+					SourceOp = "Merge_Digital_Circuit",
 					Source = "Output",
 				}
 			},
-			ViewInfo = OperatorInfo { Pos = { 275, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1595, 16.5 } },
 		},
-		BG_dot_lattice = Background {
+		BG_Dot_Lattice = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 495, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 55, 115.5 } },
 		},
-		OGrafLoader_dot_lattice = OGrafLoader {
+		OGrafLoader_Dot_Lattice = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Dot Lattice/Dot Lattice.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 239, },
+				["ScheduledAction_1.Time"] = Input { Value = 599, },
 				DynParamColor0_R = Input { Value = 0.968627450980392, },
 				DynParamColor0_G = Input { Value = 0.823529411764706, },
 				DynParamColor0_B = Input { Value = 0.631372549019608, },
@@ -492,57 +338,56 @@ Composition {
 				DynParamNum14 = Input { Value = 1, },
 				DynParamNum17 = Input { Value = 3, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 605, 82.5 } },
+			ViewInfo = OperatorInfo { Pos = { 165, 82.5 } },
 			Version = 1
 		},
-		Merge_dot_lattice = Merge {
+		Merge_Dot_Lattice = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_dot_lattice",
+					SourceOp = "BG_Dot_Lattice",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_dot_lattice",
+					SourceOp = "OGrafLoader_Dot_Lattice",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 605, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 165, 115.5 } },
 		},
-		Out_dot_lattice = Saver {
+		Out_Dot_Lattice = Saver {
 			Inputs = {
-				Index = Input { Value = "5", },
+				Index = Input { Value = "4", },
 				Input = Input {
-					SourceOp = "Merge_dot_lattice",
+					SourceOp = "Merge_Dot_Lattice",
 					Source = "Output",
 				}
 			},
-			ViewInfo = OperatorInfo { Pos = { 715, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 275, 115.5 } },
 		},
-		BG_flow_field = Background {
+		BG_Flow_Field = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 935, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 495, 115.5 } },
 		},
-		OGrafLoader_flow_field = OGrafLoader {
+		OGrafLoader_Flow_Field = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Flow Field/Flow Field.ograf.json", },
-				GlobalOut = Input { Value = 1440, },
+				GlobalOut = Input { Value = 3599, },
 				TrimOut = Input { Value = 3599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 1439, },
+				["ScheduledAction_1.Time"] = Input { Value = 3599, },
 				DynParamColor0_G = Input { Value = 1, },
 				DynParamColor0_B = Input { Value = 1, },
 				DynParamColor1_R = Input { Value = 1, },
@@ -555,57 +400,56 @@ Composition {
 				DynParamNum5 = Input { Value = 1, },
 				DynParamNum6 = Input { Value = 3.306, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1045, 82.5 } },
+			ViewInfo = OperatorInfo { Pos = { 605, 82.5 } },
 			Version = 1
 		},
-		Merge_flow_field = Merge {
+		Merge_Flow_Field = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_flow_field",
+					SourceOp = "BG_Flow_Field",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_flow_field",
+					SourceOp = "OGrafLoader_Flow_Field",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1045, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 605, 115.5 } },
 		},
-		Out_flow_field = Saver {
+		Out_Flow_Field = Saver {
 			Inputs = {
-				Index = Input { Value = "6", },
+				Index = Input { Value = "5", },
 				Input = Input {
-					SourceOp = "Merge_flow_field",
+					SourceOp = "Merge_Flow_Field",
 					Source = "Output",
 				}
 			},
-			ViewInfo = OperatorInfo { Pos = { 1155, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 715, 115.5 } },
 		},
-		BG_gaming_overlay = Background {
+		BG_Gaming_Stats_Overlay = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1375, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 935, 115.5 } },
 		},
-		OGrafLoader_gaming_overlay = OGrafLoader {
+		OGrafLoader_Gaming_Stats_Overlay = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Gaming Stats Overlay/Gaming Stats Overlay.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 231, },
+				["ScheduledAction_1.Time"] = Input { Value = 578, },
 				DynParamText0 = Input { Value = "data/stats.jsonc", },
 				DynParamColor2_R = Input { Value = 0.654901960784314, },
 				DynParamColor2_G = Input { Value = 0.545098039215686, },
@@ -628,57 +472,56 @@ Composition {
 				DynParamNum13 = Input { Value = 0.35, },
 				DynParamNum14 = Input { Value = 3, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1485, 82.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1045, 82.5 } },
 			Version = 1
 		},
-		Merge_gaming_overlay = Merge {
+		Merge_Gaming_Stats_Overlay = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_gaming_overlay",
+					SourceOp = "BG_Gaming_Stats_Overlay",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_gaming_overlay",
+					SourceOp = "OGrafLoader_Gaming_Stats_Overlay",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1485, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1045, 115.5 } },
 		},
-		Out_gaming_overlay = Saver {
+		Out_Gaming_Stats_Overlay = Saver {
 			Inputs = {
-				Index = Input { Value = "7", },
+				Index = Input { Value = "6", },
 				Input = Input {
-					SourceOp = "Merge_gaming_overlay",
+					SourceOp = "Merge_Gaming_Stats_Overlay",
 					Source = "Output",
 				}
 			},
-			ViewInfo = OperatorInfo { Pos = { 1595, 115.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1155, 115.5 } },
 		},
-		BG_json_lower_third = Background {
+		BG_JSON_Lower_Third = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 55, 214.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1375, 115.5 } },
 		},
-		OGrafLoader_json_lower_third = OGrafLoader {
+		OGrafLoader_JSON_Lower_Third = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/JSON Lower Third/JSON Lower Third.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 230, },
+				["ScheduledAction_1.Time"] = Input { Value = 575, },
 				DynParamText0 = Input { Value = "data/data.jsonc", },
 				DynParamColor2_G = Input { Value = 0.823529411764706, },
 				DynParamColor2_B = Input { Value = 1, },
@@ -707,36 +550,102 @@ Composition {
 				DynParamNum15 = Input { Value = 0.4, },
 				DynParamNum16 = Input { Value = 3, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 165, 181.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1485, 82.5 } },
 			Version = 1
 		},
-		Merge_json_lower_third = Merge {
+		Merge_JSON_Lower_Third = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_json_lower_third",
+					SourceOp = "BG_JSON_Lower_Third",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_json_lower_third",
+					SourceOp = "OGrafLoader_JSON_Lower_Third",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1485, 115.5 } },
+		},
+		Out_JSON_Lower_Third = Saver {
+			Inputs = {
+				Index = Input { Value = "7", },
+				Input = Input {
+					SourceOp = "Merge_JSON_Lower_Third",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 1595, 115.5 } },
+		},
+		BG_Lower_Third_Switcher = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 299, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 55, 214.5 } },
+		},
+		OGrafLoader_Lower_Third_Switcher = OGrafLoader {
+			Inputs = {
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Lower Third Switcher/Lower Third Switcher.ograf.json", },
+				GlobalOut = Input { Value = 599, },
+				TrimOut = Input { Value = 599, },
+				StopActionUserModified = Input { Value = 0, },
+				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
+				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
+				["ScheduledAction_1.Time"] = Input { Value = 575, },
+				DynParamNum0 = Input { Value = 1, },
+				DynParamText1 = Input { Value = "Sarah Johnson", },
+				DynParamText2 = Input { Value = "CEO, Acme Corp", },
+				DynParamText3 = Input { Value = "London", },
+				DynParamText4 = Input { Value = "James Chen", },
+				DynParamText5 = Input { Value = "CTO, Acme Corp", },
+				DynParamText6 = Input { Value = "New York", },
+				DynParamColor7_G = Input { Value = 0.823529411764706, },
+				DynParamColor7_B = Input { Value = 1, },
+				DynParamNum8 = Input { Value = 0.88, },
+				DynParamNum9 = Input { Value = 1.5, },
+				DynParamNum10 = Input { Value = 0.15, },
+				DynParamNum11 = Input { Value = 3, },
+				DynParamNum12 = Input { Value = 0.5, },
+				DynParamNum13 = Input { Value = 0.4, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 165, 181.5 } },
+			Version = 1
+		},
+		Merge_Lower_Third_Switcher = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "BG_Lower_Third_Switcher",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "OGrafLoader_Lower_Third_Switcher",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
 			ViewInfo = OperatorInfo { Pos = { 165, 214.5 } },
 		},
-		Out_json_lower_third = Saver {
+		Out_Lower_Third_Switcher = Saver {
 			Inputs = {
 				Index = Input { Value = "8", },
 				Input = Input {
-					SourceOp = "Merge_json_lower_third",
+					SourceOp = "Merge_Lower_Third_Switcher",
 					Source = "Output",
 				}
 			},
 			ViewInfo = OperatorInfo { Pos = { 275, 214.5 } },
 		},
-		BG_lower_third_stagger = Background {
+		BG_Neumorphic_Pulse = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -744,94 +653,19 @@ Composition {
 			},
 			ViewInfo = OperatorInfo { Pos = { 495, 214.5 } },
 		},
-		OGrafLoader_lower_third_stagger = OGrafLoader {
-			Inputs = {
-				Width = Input { Value = 1920, },
-				Height = Input { Value = 1080, },
-				UseFrameFormatSettings = Input { Value = 1, },
-				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Staggered Lower Third/Staggered Lower Third.ograf.json", },
-				GlobalOut = Input { Value = 240, },
-				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
-				StopActionUserModified = Input { Value = 0, },
-				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
-				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 220, },
-				DynParamText0 = Input { Value = "John Doe", },
-				DynParamText1 = Input { Value = "Senior Producer", },
-				DynParamColor2_G = Input { Value = 0.823529411764706, },
-				DynParamColor2_B = Input { Value = 1, },
-				DynParamColor3_A = Input { Value = 0.619607843137255, },
-				DynParamCheck4 = Input { Value = 1, },
-				DynParamColor5_R = Input { Value = 1, },
-				DynParamColor5_G = Input { Value = 1, },
-				DynParamColor5_B = Input { Value = 1, },
-				DynParamColor6_R = Input { Value = 1, },
-				DynParamColor6_G = Input { Value = 1, },
-				DynParamColor6_B = Input { Value = 1, },
-				DynParamColor6_A = Input { Value = 0.780392156862745, },
-				DynParamNum7 = Input { Value = 6, },
-				DynParamNum8 = Input { Value = 10, },
-				DynParamNum9 = Input { Value = 90, },
-				DynParamNum10 = Input { Value = 1, },
-				DynParamNum11 = Input { Value = 3, },
-				DynParamNum12 = Input { Value = 0.15, },
-				DynParamNum13 = Input { Value = 1.2, },
-				DynParamNum14 = Input { Value = 0.8, }
-			},
-			ViewInfo = OperatorInfo { Pos = { 605, 181.5 } },
-			Version = 1
-		},
-		Merge_lower_third_stagger = Merge {
-			Inputs = {
-				Background = Input {
-					SourceOp = "BG_lower_third_stagger",
-					Source = "Output",
-				},
-				Foreground = Input {
-					SourceOp = "OGrafLoader_lower_third_stagger",
-					Source = "Output",
-				},
-				PerformDepthMerge = Input { Value = 0, }
-			},
-			ViewInfo = OperatorInfo { Pos = { 605, 214.5 } },
-		},
-		Out_lower_third_stagger = Saver {
-			Inputs = {
-				Index = Input { Value = "9", },
-				Input = Input {
-					SourceOp = "Merge_lower_third_stagger",
-					Source = "Output",
-				}
-			},
-			ViewInfo = OperatorInfo { Pos = { 715, 214.5 } },
-		},
-		BG_neumorphic_pulse = Background {
-			Inputs = {
-				GlobalOut = Input { Value = 226, },
-				Width = Input { Value = 1920, },
-				Height = Input { Value = 1080, },
-				UseFrameFormatSettings = Input { Value = 1, },
-				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
-			},
-			ViewInfo = OperatorInfo { Pos = { 935, 214.5 } },
-		},
-		OGrafLoader_neumorphic_pulse = OGrafLoader {
-			CtrlWZoom = false,
+		OGrafLoader_Neumorphic_Pulse = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Neumorphic Pulse/Neumorphic Pulse.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 227, },
+				["ScheduledAction_1.Time"] = Input { Value = 569, },
 				DynParamText0 = Input { Value = "Confirm", },
 				DynParamColor1_R = Input { Value = 0.87843137254902, },
 				DynParamColor1_G = Input { Value = 0.898039215686275, },
@@ -850,90 +684,59 @@ Composition {
 				DynParamNum14 = Input { Value = 0.6, },
 				DynParamNum17 = Input { Value = 1, },
 				DynParamNum18 = Input { Value = 0.7, },
-				DynParamNum19 = Input { Value = 3, }
+				DynParamNum19 = Input { Value = 3, },
+				DynParamNum20 = Input { Value = 0.5, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1045, 181.5 } },
+			ViewInfo = OperatorInfo { Pos = { 605, 181.5 } },
 			Version = 1
 		},
-		Merge_neumorphic_pulse = Merge {
+		Merge_Neumorphic_Pulse = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_neumorphic_pulse",
+					SourceOp = "BG_Neumorphic_Pulse",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_neumorphic_pulse",
+					SourceOp = "OGrafLoader_Neumorphic_Pulse",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1045, 214.5 } },
+			ViewInfo = OperatorInfo { Pos = { 605, 214.5 } },
 		},
-		Out_neumorphic_pulse = Saver {
+		Out_Neumorphic_Pulse = Saver {
 			Inputs = {
-				Index = Input { Value = "10", },
+				Index = Input { Value = "9", },
 				Input = Input {
-					SourceOp = "Merge_neumorphic_pulse",
+					SourceOp = "Merge_Neumorphic_Pulse",
 					Source = "Output",
 				}
 			},
-			ViewInfo = OperatorInfo { Pos = { 1155, 214.5 } },
+			ViewInfo = OperatorInfo { Pos = { 715, 214.5 } },
 		},
-		vOGrafManifestUI1 = Fuse.vOGrafManifestUI {
+		BG_Pinwheel = Background {
 			Inputs = {
-				OGrafFile = Input { Value = "Templates:Edit/Titles/OGraf-Free/Neumorphic Pulse/Neumorphic Pulse.ograf.json", },
-				Status = Input { Value = "<div style=\"font-family: monospace; font-size: 11px;\">actionDurations: {{duration=700, type=playAction}, {duration=0, type=updateAction}, {duration=500, type=stopAction}}<br>author: {name=Dunn Lewis}<br>description: Soft-UI neumorphic panel that raises in, periodically presses/releases like a button, then raises back out.<br>id: neumorphic-pulse<br>main: neumorphic-pulse.js<br>name: neumorphic-pulse<br>renderRequirements: {{frameRate={ideal=60}}}<br>stepCount: 1<br>supportsNonRealTime: true<br>supportsRealTime: false<br>v_bmd: {duration=10}<br>version: 1.0.0<br><b>22 properties (2 bridge-only), 0 actions</b></div>", },
-				T1 = Input { Value = "Confirm", },
-				C2R = Input { Value = 0.87843137254902, },
-				C2G = Input { Value = 0.898039215686275, },
-				C2B = Input { Value = 0.925490196078431, },
-				N4 = Input { Value = 1, },
-				N5 = Input { Value = 1, },
-				N6 = Input { Value = 1, },
-				N7 = Input { Value = 409.4, },
-				N8 = Input { Value = 33.7, },
-				N9 = Input { Value = 26.46, },
-				N10 = Input { Value = 0.7, },
-				N11 = Input { Value = 2, },
-				B12 = Input { Value = 1, },
-				B13 = Input { Value = 1, },
-				N14 = Input { Value = 2.2, },
-				N15 = Input { Value = 0.6, },
-				N18 = Input { Value = 1, },
-				N19 = Input { Value = 0.7, },
-				N20 = Input { Value = 3, },
-				MaxLabel = Input { Value = "<table align=\"center\" cellspacing=\"8\"><tr><td style=\"text-align: center; background-color: #0a0c10; color: #00d2ff; padding: 5px; font-weight: bold;\">[ 20 Max Slot UI Control ]</td><td style=\"text-align: center; padding: 5px;\">  &#8594; [ 2 controls below not shown in OGrafLoader ]</td></tr></table>", },
-				N21 = Input { Value = 0.5, },
-				LoadedPath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Neumorphic Pulse/Neumorphic Pulse.ograf.json", },
-				LoaderNode = Input { Value = "OGrafLoader_neumorphic_pulse", }
-			},
-			ViewInfo = OperatorInfo { Pos = { 935, 181.5 } },
-			Version = 1
-		},
-		BG_pinwheel = Background {
-			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1375, 214.5 } },
+			ViewInfo = OperatorInfo { Pos = { 935, 214.5 } },
 		},
-		OGrafLoader_pinwheel = OGrafLoader {
+		OGrafLoader_Pinwheel = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Pinwheel/Pinwheel.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 239, },
+				["ScheduledAction_1.Time"] = Input { Value = 599, },
 				DynParamColor0_R = Input { Value = 1, },
 				DynParamColor0_G = Input { Value = 0.517647058823529, },
 				DynParamColor0_B = Input { Value = 0.486274509803922, },
@@ -956,57 +759,56 @@ Composition {
 				DynParamNum14 = Input { Value = 1, },
 				DynParamNum17 = Input { Value = 3, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1485, 181.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1045, 181.5 } },
 			Version = 1
 		},
-		Merge_pinwheel = Merge {
+		Merge_Pinwheel = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_pinwheel",
+					SourceOp = "BG_Pinwheel",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_pinwheel",
+					SourceOp = "OGrafLoader_Pinwheel",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1485, 214.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1045, 214.5 } },
 		},
-		Out_pinwheel = Saver {
+		Out_Pinwheel = Saver {
 			Inputs = {
-				Index = Input { Value = "11", },
+				Index = Input { Value = "10", },
 				Input = Input {
-					SourceOp = "Merge_pinwheel",
+					SourceOp = "Merge_Pinwheel",
 					Source = "Output",
 				}
 			},
-			ViewInfo = OperatorInfo { Pos = { 1595, 214.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1155, 214.5 } },
 		},
-		BG_sine_wave_lines = Background {
+		BG_Sine_Wave = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 55, 313.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1375, 214.5 } },
 		},
-		OGrafLoader_sine_wave_lines = OGrafLoader {
+		OGrafLoader_Sine_Wave = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Sine Wave/Sine Wave.ograf.json", },
-				GlobalOut = Input { Value = 1440, },
+				GlobalOut = Input { Value = 3599, },
 				TrimOut = Input { Value = 3599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 1439, },
+				["ScheduledAction_1.Time"] = Input { Value = 3599, },
 				DynParamColor0_R = Input { Value = 0.00784313725490196, },
 				DynParamColor0_G = Input { Value = 0.0313725490196078, },
 				DynParamColor0_B = Input { Value = 0.0941176470588235, },
@@ -1024,36 +826,108 @@ Composition {
 				DynParamNum7 = Input { Value = 80, },
 				DynParamNum8 = Input { Value = 2, }
 			},
-			ViewInfo = OperatorInfo { Pos = { 165, 280.5 } },
+			ViewInfo = OperatorInfo { Pos = { 1485, 181.5 } },
 			Version = 1
 		},
-		Merge_sine_wave_lines = Merge {
+		Merge_Sine_Wave = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_sine_wave_lines",
+					SourceOp = "BG_Sine_Wave",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_sine_wave_lines",
+					SourceOp = "OGrafLoader_Sine_Wave",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 1485, 214.5 } },
+		},
+		Out_Sine_Wave = Saver {
+			Inputs = {
+				Index = Input { Value = "11", },
+				Input = Input {
+					SourceOp = "Merge_Sine_Wave",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 1595, 214.5 } },
+		},
+		BG_Staggered_Lower_Third = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 299, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 55, 313.5 } },
+		},
+		OGrafLoader_Staggered_Lower_Third = OGrafLoader {
+			Inputs = {
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Staggered Lower Third/Staggered Lower Third.ograf.json", },
+				GlobalOut = Input { Value = 599, },
+				TrimOut = Input { Value = 599, },
+				StopActionUserModified = Input { Value = 0, },
+				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
+				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
+				["ScheduledAction_1.Time"] = Input { Value = 551, },
+				DynParamText0 = Input { Value = "John Doe", },
+				DynParamText1 = Input { Value = "Senior Producer", },
+				DynParamColor2_G = Input { Value = 0.823529411764706, },
+				DynParamColor2_B = Input { Value = 1, },
+				DynParamColor3_A = Input { Value = 0.619607843137255, },
+				DynParamCheck4 = Input { Value = 1, },
+				DynParamColor5_R = Input { Value = 1, },
+				DynParamColor5_G = Input { Value = 1, },
+				DynParamColor5_B = Input { Value = 1, },
+				DynParamColor6_R = Input { Value = 1, },
+				DynParamColor6_G = Input { Value = 1, },
+				DynParamColor6_B = Input { Value = 1, },
+				DynParamColor6_A = Input { Value = 0.780392156862745, },
+				DynParamNum7 = Input { Value = 6, },
+				DynParamNum8 = Input { Value = 10, },
+				DynParamNum9 = Input { Value = 90, },
+				DynParamNum10 = Input { Value = 1, },
+				DynParamNum11 = Input { Value = 3, },
+				DynParamNum12 = Input { Value = 0.15, },
+				DynParamNum13 = Input { Value = 1.2, },
+				DynParamNum14 = Input { Value = 0.8, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 165, 280.5 } },
+			Version = 1
+		},
+		Merge_Staggered_Lower_Third = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "BG_Staggered_Lower_Third",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "OGrafLoader_Staggered_Lower_Third",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
 			ViewInfo = OperatorInfo { Pos = { 165, 313.5 } },
 		},
-		Out_sine_wave_lines = Saver {
+		Out_Staggered_Lower_Third = Saver {
 			Inputs = {
 				Index = Input { Value = "12", },
 				Input = Input {
-					SourceOp = "Merge_sine_wave_lines",
+					SourceOp = "Merge_Staggered_Lower_Third",
 					Source = "Output",
 				}
 			},
 			ViewInfo = OperatorInfo { Pos = { 275, 313.5 } },
 		},
-		BG_thinking_orbs_ograf = Background {
+		BG_Thinking_Orbs = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -1061,20 +935,19 @@ Composition {
 			},
 			ViewInfo = OperatorInfo { Pos = { 495, 313.5 } },
 		},
-		OGrafLoader_thinking_orbs_ograf = OGrafLoader {
+		OGrafLoader_Thinking_Orbs = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Thinking Orbs/Thinking Orbs.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 230, },
+				["ScheduledAction_1.Time"] = Input { Value = 575, },
 				DynParamNum0 = Input { Value = 2, },
 				DynParamNum1 = Input { Value = 721, },
 				DynParamNum2 = Input { Value = 0.5, },
@@ -1094,33 +967,33 @@ Composition {
 			ViewInfo = OperatorInfo { Pos = { 605, 280.5 } },
 			Version = 1
 		},
-		Merge_thinking_orbs_ograf = Merge {
+		Merge_Thinking_Orbs = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_thinking_orbs_ograf",
+					SourceOp = "BG_Thinking_Orbs",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_thinking_orbs_ograf",
+					SourceOp = "OGrafLoader_Thinking_Orbs",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
 			ViewInfo = OperatorInfo { Pos = { 605, 313.5 } },
 		},
-		Out_thinking_orbs_ograf = Saver {
+		Out_Thinking_Orbs = Saver {
 			Inputs = {
 				Index = Input { Value = "13", },
 				Input = Input {
-					SourceOp = "Merge_thinking_orbs_ograf",
+					SourceOp = "Merge_Thinking_Orbs",
 					Source = "Output",
 				}
 			},
 			ViewInfo = OperatorInfo { Pos = { 715, 313.5 } },
 		},
-		BG_wave_interference = Background {
+		BG_Wave_Interference = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -1128,20 +1001,19 @@ Composition {
 			},
 			ViewInfo = OperatorInfo { Pos = { 935, 313.5 } },
 		},
-		OGrafLoader_wave_interference = OGrafLoader {
+		OGrafLoader_Wave_Interference = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Wave Interference/Wave Interference.ograf.json", },
-				GlobalOut = Input { Value = 1440, },
+				GlobalOut = Input { Value = 3599, },
 				TrimOut = Input { Value = 3599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 1439, },
+				["ScheduledAction_1.Time"] = Input { Value = 3599, },
 				DynParamCheck1 = Input { Value = 1, },
 				DynParamColor2_R = Input { Value = 0.443137254901961, },
 				DynParamColor2_B = Input { Value = 0.415686274509804, },
@@ -1153,33 +1025,33 @@ Composition {
 			ViewInfo = OperatorInfo { Pos = { 1045, 280.5 } },
 			Version = 1
 		},
-		Merge_wave_interference = Merge {
+		Merge_Wave_Interference = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_wave_interference",
+					SourceOp = "BG_Wave_Interference",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_wave_interference",
+					SourceOp = "OGrafLoader_Wave_Interference",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
 			ViewInfo = OperatorInfo { Pos = { 1045, 313.5 } },
 		},
-		Out_wave_interference = Saver {
+		Out_Wave_Interference = Saver {
 			Inputs = {
 				Index = Input { Value = "14", },
 				Input = Input {
-					SourceOp = "Merge_wave_interference",
+					SourceOp = "Merge_Wave_Interference",
 					Source = "Output",
 				}
 			},
 			ViewInfo = OperatorInfo { Pos = { 1155, 313.5 } },
 		},
-		BG_weave_pattern = Background {
+		BG_Weave_Pattern = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -1187,20 +1059,19 @@ Composition {
 			},
 			ViewInfo = OperatorInfo { Pos = { 1375, 313.5 } },
 		},
-		OGrafLoader_weave_pattern = OGrafLoader {
+		OGrafLoader_Weave_Pattern = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Weave Pattern/Weave Pattern.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 239, },
+				["ScheduledAction_1.Time"] = Input { Value = 599, },
 				DynParamColor0_R = Input { Value = 0.972549019607843, },
 				DynParamColor0_G = Input { Value = 0.694117647058824, },
 				DynParamColor0_B = Input { Value = 0.584313725490196, },
@@ -1221,25 +1092,25 @@ Composition {
 			ViewInfo = OperatorInfo { Pos = { 1485, 280.5 } },
 			Version = 1
 		},
-		Merge_weave_pattern = Merge {
+		Merge_Weave_Pattern = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_weave_pattern",
+					SourceOp = "BG_Weave_Pattern",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_weave_pattern",
+					SourceOp = "OGrafLoader_Weave_Pattern",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
 			ViewInfo = OperatorInfo { Pos = { 1485, 313.5 } },
 		},
-		Out_weave_pattern = Saver {
+		Out_Weave_Pattern = Saver {
 			Inputs = {
 				Index = Input { Value = "15", },
 				Input = Input {
-					SourceOp = "Merge_weave_pattern",
+					SourceOp = "Merge_Weave_Pattern",
 					Source = "Output",
 				}
 			},
@@ -1255,13 +1126,13 @@ Composition {
 			Left = 0,
 			Top = 0,
 			Width = 1728,
-			Height = 928,
-			ZoneInfo = { ["!Right"] = {
-				}, ["!Left"] = {
-				}, AuxLeft = { Expanded = true }, Right = { Expanded = true, }, Left = { Expanded = false, }, AuxRight = { Expanded = true } },
-			ViewInfo = { Viewer1 = { Show = true, RatioX = 0.896692194203117, RatioY = 0.01, }, InnerLeft = { RatioY = 100, PixelX = 504, }, MainSplit = { RatioX = 100, RatioY = 1.51897758447636, }, CenterSplit = { RatioX = 1.00043019856007, RatioY = 100, }, Viewer2 = { Show = true, RatioX = 4.87666289574636, RatioY = 0.01, }, Comments = { Show = false }, Time = { Show = true, RatioX = 100, }, InnerColumns = { RatioX = 100, RatioY = 1.48804817664766, }, Keyframes = { Show = false, }, LayoutStrip = { Show = true, }, Inspector = { Show = true, RatioX = 100, RatioY = 1, }, InnerRight = {
-				}, ActionStrip = { Show = true, RatioX = 100, }, OuterColumns = { RatioX = 100, RatioY = 1, }, Effects = { Show = false, }, Clips = { Show = false, }, Metadata = { Show = false, }, OuterLeft = {
-				}, ViewerSplit = { RatioX = 100, RatioY = 1, }, Nodes = { Show = true, RatioX = 1, RatioY = 100, }, OuterRight = { RatioY = 100, PixelX = 520, }, MediaPool = { Show = false, }, Spline = { Show = false, } },
+			Height = 935,
+			ZoneInfo = { AuxRight = { Expanded = true }, ["!Left"] = {
+				}, AuxLeft = { Expanded = true }, Right = { Expanded = true, }, Left = { Expanded = false, }, ["!Right"] = {
+				} },
+			ViewInfo = { Viewer1 = { Show = true, RatioX = 0.906282485050207, RatioY = 0.01, }, InnerLeft = { PixelX = 504, RatioY = 100, }, MainSplit = { RatioX = 100, RatioY = 1.43532635536646, }, CenterSplit = { RatioX = 1.00043019856007, RatioY = 100, }, Viewer2 = { Show = true, RatioX = 4.86707260489926, RatioY = 0.01, }, Comments = { Show = false }, Time = { Show = true, RatioX = 100, }, InnerColumns = { RatioX = 100, RatioY = 1.57169940575757, }, Keyframes = { Show = false, }, LayoutStrip = { Show = true, }, Inspector = { Show = true, RatioX = 100, RatioY = 1, }, InnerRight = {
+				}, MediaPool = { Show = false, }, OuterColumns = { RatioX = 100, RatioY = 1, }, Effects = { Show = false, }, ActionStrip = { Show = true, RatioX = 100, }, Metadata = { Show = false, }, OuterLeft = {
+				}, ViewerSplit = { RatioX = 100, RatioY = 1, }, Nodes = { Show = true, RatioX = 1, RatioY = 100, }, OuterRight = { PixelX = 520, RatioY = 100, }, Clips = { Show = false, }, Spline = { Show = false, } },
 			Views = ordered() {
 				MediaPool = "MediaPoolView",
 				Effects = MultiView {
@@ -1284,8 +1155,8 @@ Composition {
 						NavigatorSize = { 200, 140 },
 						Direction = "Horizontal",
 						PipeStyle = "Direct",
-						RootScale = 1.20294,
-						RootOffset = { -108.007, -184.607 }
+						RootScale = 0.261631,
+						RootOffset = { 984.147, 256.257 }
 					}
 				},
 				Keyframes = MultiView {
@@ -1305,7 +1176,7 @@ Composition {
 						KeyFrameView = {
 							Position = { Left = 170, Bottom = 372 },
 							ScaleX = 9.69430894308943,
-							OffsetX = -630.130081300813,
+							OffsetX = -630.130081300812,
 							OffsetY = 0,
 							AutoScaling = "scroll",
 							AutoSnapTo = "frame",
@@ -1478,14 +1349,14 @@ Composition {
 				},
 			},
 			FrameFormat = {
-				Rate = 24,
+				Rate = 60,
 				GuideRatio = 1.77777777777778,
 				DepthFull = 3,
 				DepthPreview = 3,
 				DepthInteractive = 3,
 			},
 			Unsorted = {
-				GlobalEnd = 226
+				GlobalEnd = 299
 			},
 			SpellCheck = {
 				Language = "auto"

@@ -3,7 +3,7 @@
   "id": "digital-circuit",
   "version": "1.0.0",
   "name": "Digital Circuit",
-  "description": "High-tech grid with signal tracers. Canvas RAF. goToTime maps to _time for NRT. Fixed: blank frame 0, loop in load().",
+  "description": "High-tech grid with signal tracers.",
   "author": {
     "name": "Dunn Lewis"
   },

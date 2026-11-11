@@ -3,7 +3,7 @@
   "id": "auto-fit-headlines",
   "version": "1.0.0",
   "name": "Auto-Fit Headline",
-  "description": "News headline that fills a fixed-width container by adjusting the Roboto Flex wdth axis (25-151) instead of CSS transform:scaleX() — the font is designed to look correct at every width, so short headlines expand and long ones condense without any letterform distortion. Weight is driven by an urgency preset (BREAKING/ALERT/UPDATE/DEVELOPING). Headline/subhead colors and sizes plus XY placement are all Inspector-controlled.",
+  "description": "News headline that fills a fixed-width container by adjusting the Roboto Flex wdth axis (25-151) instead of CSS transform:scaleX(); the font is designed to look correct at every width, so short headlines expand and long ones condense without any letterform distortion. Weight is driven by an urgency preset (BREAKING/ALERT/UPDATE/DEVELOPING). Headline/subhead colors and sizes plus XY placement are all Inspector-controlled.",
   "author": {
     "name": "Dunn Lewis"
   },

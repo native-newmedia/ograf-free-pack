@@ -3,7 +3,7 @@
   "id": "wave-interference",
   "version": "1.0.0",
   "name": "Wave Interference",
-  "description": "Layered sine-wave interference patterns. Canvas RAF. goToTime maps to _time for NRT. Fixed: blank frame 0, loop in load().",
+  "description": "Layered sine-wave interference patterns.",
   "author": {
     "name": "Dunn Lewis"
   },

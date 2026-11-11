@@ -3,7 +3,7 @@
   "id": "flow-field",
   "version": "1.0.0",
   "name": "Flow Field",
-  "description": "Simplex noise flow field with blurred background grid + particle layer. Canvas RAF. goToTime maps to _time for NRT.",
+  "description": "Simplex noise flow field with blurred background grid + particle layer.",
   "author": {
     "name": "Dunn Lewis"
   },

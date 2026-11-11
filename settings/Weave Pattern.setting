@@ -1,43 +1,42 @@
 {
 	Tools = ordered() {
-		Out_weave_pattern = MediaOut {
+		Out_Weave_Pattern = MediaOut {
 			Inputs = {
 				Index = Input { Value = "0", },
 				Input = Input {
-					SourceOp = "Merge_weave_pattern",
+					SourceOp = "Merge_Weave_Pattern",
 					Source = "Output",
 				}
 			},
 			ViewInfo = OperatorInfo { Pos = { 220, 33 } },
 		},
-		Merge_weave_pattern = Merge {
+		Merge_Weave_Pattern = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_weave_pattern",
+					SourceOp = "BG_Weave_Pattern",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_weave_pattern",
+					SourceOp = "OGrafLoader_Weave_Pattern",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
 			ViewInfo = OperatorInfo { Pos = { 110, 33 } },
 		},
-		OGrafLoader_weave_pattern = OGrafLoader {
+		OGrafLoader_Weave_Pattern = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Weave Pattern/Weave Pattern.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 239, },
+				["ScheduledAction_1.Time"] = Input { Value = 599, },
 				DynParamColor0_R = Input { Value = 0.972549019607843, },
 				DynParamColor0_G = Input { Value = 0.694117647058824, },
 				DynParamColor0_B = Input { Value = 0.584313725490196, },
@@ -54,15 +53,15 @@
 				DynParamNum13 = Input { Value = 1, },
 				DynParamNum14 = Input { Value = 1, },
 				DynParamNum17 = Input { Value = 3, },
-				JSONLink = Input { Value = "{\n  \"$schema\": \"https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json\",\n  \"id\": \"weave-pattern\",\n  \"version\": \"1.0.0\",\n  \"name\": \"Weave Pattern\",\n  \"description\": \"Animated herringbone/weave background pattern (CSS adapted from a Uiverse.io snippet by marcelodolza) — two-colour zigzag radial-gradient tile that can scroll, rotate, and be used full-bleed or as a contained accent card.\",\n  \"author\": {\n    \"name\": \"Dunn Lewis\"\n  },\n  \"main\": \"weave-pattern.js\",\n  \"supportsRealTime\": false,\n  \"supportsNonRealTime\": true,\n  \"stepCount\": 1,\n  \"v_bmd\": {\n    \"duration\": 10\n  },\n  \"schema\": {\n    \"type\": \"object\",\n    \"additionalProperties\": false,\n    \"properties\": {\n      \"colorPrimary\": {\n        \"type\": \"string\",\n        \"title\": \"Colour 1\",\n        \"default\": \"#f8b195\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n      \"colorSecondary\": {\n        \"type\": \"string\",\n        \"title\": \"Colour 2\",\n        \"default\": \"#355c7d\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n      \"patternSize\": {\n        \"type\": \"number\",\n        \"title\": \"Pattern Tile Size (px)\",\n        \"default\": 100,\n        \"minimum\": 20,\n        \"maximum\": 400\n      },\n      \"scrollEnabled\": {\n        \"type\": \"boolean\",\n        \"title\": \"Animate Scroll\",\n        \"default\": true\n      },\n      \"scrollSpeedX\": {\n        \"type\": \"number\",\n        \"title\": \"Scroll Speed X (px/s)\",\n        \"default\": 20,\n        \"minimum\": -400,\n        \"maximum\": 400\n      },\n      \"scrollSpeedY\": {\n        \"type\": \"number\",\n        \"title\": \"Scroll Speed Y (px/s)\",\n        \"default\": 20,\n        \"minimum\": -400,\n        \"maximum\": 400\n      },\n      \"rotation\": {\n        \"type\": \"number\",\n        \"title\": \"Rotation (deg)\",\n        \"default\": 0,\n        \"minimum\": -180,\n        \"maximum\": 180\n      },\n      \"contained\": {\n        \"type\": \"boolean\",\n        \"title\": \"Contained Card (off = full-bleed background)\",\n        \"default\": false\n      },\n      \"cardWidth\": {\n        \"type\": \"number\",\n        \"title\": \"Card Width (px, contained only)\",\n        \"default\": 480,\n        \"minimum\": 60,\n        \"maximum\": 1800\n      },\n      \"cardHeight\": {\n        \"type\": \"number\",\n        \"title\": \"Card Height (px, contained only)\",\n        \"default\": 300,\n        \"minimum\": 60,\n        \"maximum\": 1000\n      },\n      \"cornerRadius\": {\n        \"type\": \"number\",\n        \"title\": \"Corner Radius (px, contained only)\",\n        \"default\": 24,\n        \"minimum\": 0,\n        \"maximum\": 300\n      },\n      \"posX\": {\n        \"type\": \"number\",\n        \"title\": \"Position X (px)\",\n        \"default\": 0,\n        \"minimum\": -960,\n        \"maximum\": 960\n      },\n      \"posY\": {\n        \"type\": \"number\",\n        \"title\": \"Position Y (px)\",\n        \"default\": 0,\n        \"minimum\": -540,\n        \"maximum\": 540\n      },\n      \"scale\": {\n        \"type\": \"number\",\n        \"title\": \"Scale\",\n        \"default\": 1.0,\n        \"minimum\": 0.2,\n        \"maximum\": 3.0\n      },\n      \"opacity\": {\n        \"type\": \"number\",\n        \"title\": \"Opacity\",\n        \"default\": 1.0,\n        \"minimum\": 0,\n        \"maximum\": 1\n      },\n      \"introDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Intro Duration (s)\",\n        \"default\": 0,\n        \"minimum\": 0,\n        \"maximum\": 10\n      },\n      \"outroDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Outro Duration (s)\",\n        \"default\": 0,\n        \"minimum\": 0,\n        \"maximum\": 10\n      },\n      \"easePower\": {\n        \"type\": \"number\",\n        \"title\": \"Ease Power (1 = linear, 3 = cubic)\",\n        \"default\": 3,\n        \"minimum\": 1,\n        \"maximum\": 6\n      }\n    }\n  },\n  \"renderRequirements\": [\n    {\n      \"frameRate\": {\n        \"ideal\": 60\n      }\n    }\n  ],\n  \"actionDurations\": [\n    { \"type\": \"playAction\", \"duration\": 0 },\n    { \"type\": \"updateAction\", \"duration\": 0 },\n    { \"type\": \"stopAction\", \"duration\": 0 }\n  ]\n}", }
+				JSONLink = Input { Value = "{\n  \"$schema\": \"https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json\",\n  \"id\": \"weave-pattern\",\n  \"version\": \"1.0.0\",\n  \"name\": \"Weave Pattern\",\n  \"description\": \"Animated herringbone/weave background pattern (CSS adapted from a Uiverse.io snippet by marcelodolza): two-colour zigzag radial-gradient tile that can scroll, rotate, and be used full-bleed or as a contained accent card.\",\n  \"author\": {\n    \"name\": \"Dunn Lewis\"\n  },\n  \"main\": \"weave-pattern.js\",\n  \"supportsRealTime\": false,\n  \"supportsNonRealTime\": true,\n  \"stepCount\": 1,\n  \"v_bmd\": {\n    \"duration\": 10\n  },\n  \"schema\": {\n    \"type\": \"object\",\n    \"additionalProperties\": false,\n    \"properties\": {\n      \"colorPrimary\": {\n        \"type\": \"string\",\n        \"title\": \"Colour 1\",\n        \"default\": \"#f8b195\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n      \"colorSecondary\": {\n        \"type\": \"string\",\n        \"title\": \"Colour 2\",\n        \"default\": \"#355c7d\",\n        \"gddType\": \"color-rrggbb\",\n        \"pattern\": \"^#[0-9a-f]{6}$\"\n      },\n      \"patternSize\": {\n        \"type\": \"number\",\n        \"title\": \"Pattern Tile Size (px)\",\n        \"default\": 100,\n        \"minimum\": 20,\n        \"maximum\": 400\n      },\n      \"scrollEnabled\": {\n        \"type\": \"boolean\",\n        \"title\": \"Animate Scroll\",\n        \"default\": true\n      },\n      \"scrollSpeedX\": {\n        \"type\": \"number\",\n        \"title\": \"Scroll Speed X (px/s)\",\n        \"default\": 20,\n        \"minimum\": -400,\n        \"maximum\": 400\n      },\n      \"scrollSpeedY\": {\n        \"type\": \"number\",\n        \"title\": \"Scroll Speed Y (px/s)\",\n        \"default\": 20,\n        \"minimum\": -400,\n        \"maximum\": 400\n      },\n      \"rotation\": {\n        \"type\": \"number\",\n        \"title\": \"Rotation (deg)\",\n        \"default\": 0,\n        \"minimum\": -180,\n        \"maximum\": 180\n      },\n      \"contained\": {\n        \"type\": \"boolean\",\n        \"title\": \"Contained Card (off = full-bleed background)\",\n        \"default\": false\n      },\n      \"cardWidth\": {\n        \"type\": \"number\",\n        \"title\": \"Card Width (px, contained only)\",\n        \"default\": 480,\n        \"minimum\": 60,\n        \"maximum\": 1800\n      },\n      \"cardHeight\": {\n        \"type\": \"number\",\n        \"title\": \"Card Height (px, contained only)\",\n        \"default\": 300,\n        \"minimum\": 60,\n        \"maximum\": 1000\n      },\n      \"cornerRadius\": {\n        \"type\": \"number\",\n        \"title\": \"Corner Radius (px, contained only)\",\n        \"default\": 24,\n        \"minimum\": 0,\n        \"maximum\": 300\n      },\n      \"posX\": {\n        \"type\": \"number\",\n        \"title\": \"Position X (px)\",\n        \"default\": 0,\n        \"minimum\": -960,\n        \"maximum\": 960\n      },\n      \"posY\": {\n        \"type\": \"number\",\n        \"title\": \"Position Y (px)\",\n        \"default\": 0,\n        \"minimum\": -540,\n        \"maximum\": 540\n      },\n      \"scale\": {\n        \"type\": \"number\",\n        \"title\": \"Scale\",\n        \"default\": 1.0,\n        \"minimum\": 0.2,\n        \"maximum\": 3.0\n      },\n      \"opacity\": {\n        \"type\": \"number\",\n        \"title\": \"Opacity\",\n        \"default\": 1.0,\n        \"minimum\": 0,\n        \"maximum\": 1\n      },\n      \"introDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Intro Duration (s)\",\n        \"default\": 0,\n        \"minimum\": 0,\n        \"maximum\": 10\n      },\n      \"outroDuration\": {\n        \"type\": \"number\",\n        \"title\": \"Outro Duration (s)\",\n        \"default\": 0,\n        \"minimum\": 0,\n        \"maximum\": 10\n      },\n      \"easePower\": {\n        \"type\": \"number\",\n        \"title\": \"Ease Power (1 = linear, 3 = cubic)\",\n        \"default\": 3,\n        \"minimum\": 1,\n        \"maximum\": 6\n      }\n    }\n  },\n  \"renderRequirements\": [\n    {\n      \"frameRate\": {\n        \"ideal\": 60\n      }\n    }\n  ],\n  \"actionDurations\": [\n    { \"type\": \"playAction\", \"duration\": 0 },\n    { \"type\": \"updateAction\", \"duration\": 0 },\n    { \"type\": \"stopAction\", \"duration\": 0 }\n  ]\n}", }
 			},
 			ViewInfo = OperatorInfo { Pos = { 110, 0 } },
 			UserControls = ordered() { JSONLink = { LINK_Main = 3, LINKID_DataType = "Text", INP_Default = 0, IC_ControlPage = -1, INPID_InputControl = "ImageControl", LINKS_Name = "JSON Link", } },
 			Version = 1
 		},
-		BG_weave_pattern = Background {
+		BG_Weave_Pattern = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },

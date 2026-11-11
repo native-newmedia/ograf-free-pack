@@ -1,43 +1,42 @@
 {
 	Tools = ordered() {
-		Out_lower_third_stagger = MediaOut {
+		Out_Staggered_Lower_Third = MediaOut {
 			Inputs = {
 				Index = Input { Value = "0", },
 				Input = Input {
-					SourceOp = "Merge_lower_third_stagger",
+					SourceOp = "Merge_Staggered_Lower_Third",
 					Source = "Output",
 				}
 			},
 			ViewInfo = OperatorInfo { Pos = { 220, 33 } },
 		},
-		Merge_lower_third_stagger = Merge {
+		Merge_Staggered_Lower_Third = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_lower_third_stagger",
+					SourceOp = "BG_Staggered_Lower_Third",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_lower_third_stagger",
+					SourceOp = "OGrafLoader_Staggered_Lower_Third",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
 			ViewInfo = OperatorInfo { Pos = { 110, 33 } },
 		},
-		OGrafLoader_lower_third_stagger = OGrafLoader {
+		OGrafLoader_Staggered_Lower_Third = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Staggered Lower Third/Staggered Lower Third.ograf.json", },
-				GlobalOut = Input { Value = 240, },
+				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 220, },
+				["ScheduledAction_1.Time"] = Input { Value = 551, },
 				DynParamText0 = Input { Value = "John Doe", },
 				DynParamText1 = Input { Value = "Senior Producer", },
 				DynParamColor2_G = Input { Value = 0.823529411764706, },
@@ -65,9 +64,9 @@
 			UserControls = ordered() { JSONLink = { LINK_Main = 3, LINKID_DataType = "Text", INP_Default = 0, IC_ControlPage = -1, INPID_InputControl = "ImageControl", LINKS_Name = "JSON Link", } },
 			Version = 1
 		},
-		BG_lower_third_stagger = Background {
+		BG_Staggered_Lower_Third = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },

@@ -3,7 +3,7 @@
   "id": "dot-lattice",
   "version": "1.0.0",
   "name": "Dot Lattice",
-  "description": "Animated dot-lattice background pattern (CSS adapted from a Uiverse.io snippet by csemszepp) — interlocking corner and centre dot rings that can scroll, rotate, and be used full-bleed or as a contained accent card.",
+  "description": "Animated dot-lattice background pattern (CSS adapted from a Uiverse.io snippet by csemszepp): interlocking corner and centre dot rings that can scroll, rotate, and be used full-bleed or as a contained accent card.",
   "author": {
     "name": "Dunn Lewis"
   },

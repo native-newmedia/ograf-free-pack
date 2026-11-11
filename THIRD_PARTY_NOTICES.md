@@ -47,7 +47,7 @@ SOFTWARE.
 
 `OGraf-Free/Auto-Fit Headline/RobotoFlex-Variable.ttf` is Roboto Flex, licensed under the
 SIL Open Font License 1.1. A copy of the licence also sits in the graphic's folder as
-`OFL-roboto-flex.txt`.
+`OFL.txt`.
 
 ```
 Copyright 2017 The Roboto Flex Project Authors (https://github.com/TypeNetwork/Roboto-Flex)

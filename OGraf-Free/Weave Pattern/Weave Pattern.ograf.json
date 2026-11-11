@@ -3,7 +3,7 @@
   "id": "weave-pattern",
   "version": "1.0.0",
   "name": "Weave Pattern",
-  "description": "Animated herringbone/weave background pattern (CSS adapted from a Uiverse.io snippet by marcelodolza) — two-colour zigzag radial-gradient tile that can scroll, rotate, and be used full-bleed or as a contained accent card.",
+  "description": "Animated herringbone/weave background pattern (CSS adapted from a Uiverse.io snippet by marcelodolza): two-colour zigzag radial-gradient tile that can scroll, rotate, and be used full-bleed or as a contained accent card.",
   "author": {
     "name": "Dunn Lewis"
   },

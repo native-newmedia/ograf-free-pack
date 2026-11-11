@@ -1,43 +1,42 @@
 {
 	Tools = ordered() {
-		Out_sine_wave_lines = MediaOut {
+		Out_Sine_Wave = MediaOut {
 			Inputs = {
 				Index = Input { Value = "0", },
 				Input = Input {
-					SourceOp = "Merge_sine_wave_lines",
+					SourceOp = "Merge_Sine_Wave",
 					Source = "Output",
 				}
 			},
 			ViewInfo = OperatorInfo { Pos = { 220, 33 } },
 		},
-		Merge_sine_wave_lines = Merge {
+		Merge_Sine_Wave = Merge {
 			Inputs = {
 				Background = Input {
-					SourceOp = "BG_sine_wave_lines",
+					SourceOp = "BG_Sine_Wave",
 					Source = "Output",
 				},
 				Foreground = Input {
-					SourceOp = "OGrafLoader_sine_wave_lines",
+					SourceOp = "OGrafLoader_Sine_Wave",
 					Source = "Output",
 				},
 				PerformDepthMerge = Input { Value = 0, }
 			},
 			ViewInfo = OperatorInfo { Pos = { 110, 33 } },
 		},
-		OGrafLoader_sine_wave_lines = OGrafLoader {
+		OGrafLoader_Sine_Wave = OGrafLoader {
 			Inputs = {
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Sine Wave/Sine Wave.ograf.json", },
-				GlobalOut = Input { Value = 1440, },
+				GlobalOut = Input { Value = 3599, },
 				TrimOut = Input { Value = 3599, },
-				TimeScale = Input { Value = 2.5, },
 				StopActionUserModified = Input { Value = 0, },
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
-				["ScheduledAction_1.Time"] = Input { Value = 1439, },
+				["ScheduledAction_1.Time"] = Input { Value = 3599, },
 				DynParamColor0_R = Input { Value = 0.00784313725490196, },
 				DynParamColor0_G = Input { Value = 0.0313725490196078, },
 				DynParamColor0_B = Input { Value = 0.0941176470588235, },
@@ -60,9 +59,9 @@
 			UserControls = ordered() { JSONLink = { LINK_Main = 3, LINKID_DataType = "Text", INP_Default = 0, IC_ControlPage = -1, INPID_InputControl = "ImageControl", LINKS_Name = "JSON Link", } },
 			Version = 1
 		},
-		BG_sine_wave_lines = Background {
+		BG_Sine_Wave = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 226, },
+				GlobalOut = Input { Value = 299, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },

@@ -3,7 +3,7 @@
   "id": "json-lower-third",
   "version": "1.0.0",
   "name": "JSON Lower Third",
-  "description": "Name + title loaded from data/data.txt on disk. The file holds JSON but uses a .txt extension so Resolve does not list it as a title. Edit it, or point Data File at your own file.",
+  "description": "Name + title loaded from data/data.jsonc on disk. The file holds JSON but uses a .jsonc extension so Resolve does not list it as a title. Edit it, or point Data File at your own file.",
   "author": {
     "name": "Dunn Lewis"
   },

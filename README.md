@@ -10,7 +10,6 @@
 
 - DaVinci Resolve 21.1.1 or later with OGrafLoader. Tested on macOS with Resolve 21.1.2.
 - Windows has not been tested yet.
-- Auto-Fit Headline loads Roboto Flex from fonts.googleapis.com and needs an internet connection.
 
 ## Install
 

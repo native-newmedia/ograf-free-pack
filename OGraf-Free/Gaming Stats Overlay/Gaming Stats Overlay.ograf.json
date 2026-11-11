@@ -3,7 +3,7 @@
   "id": "gaming-overlay",
   "version": "1.0.0",
   "name": "Gaming Stats Overlay",
-  "description": "Esports/streaming HUD with K/D/A stats, rank, viewer count and win streak. Count-up animation driven by goToTime. +Kill/+Death live increment customActions.",
+  "description": "Esports/streaming HUD with K/D/A stats, rank, viewer count and win streak. Count-up animation. +Kill and +Death actions add live increments.",
   "author": {
     "name": "Dunn Lewis"
   },

@@ -3,7 +3,7 @@
   "id": "ab-switcher",
   "version": "1.0.0",
   "name": "Lower Third Switcher",
-  "description": "Two lower-third layouts in one graphic. Toggle instantly between Layout A and Layout B. currentLayout field is NRT-safe.",
+  "description": "Two lower-third layouts in one graphic. Toggle instantly between Layout A and Layout B.",
   "author": {
     "name": "Dunn Lewis"
   },

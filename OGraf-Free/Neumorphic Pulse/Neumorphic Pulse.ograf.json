@@ -3,7 +3,7 @@
   "id": "neumorphic-pulse",
   "version": "1.0.0",
   "name": "Neumorphic Pulse",
-  "description": "Soft-UI neumorphic panel that raises in, periodically presses/releases like a button, then raises back out.",
+  "description": "Soft-UI neumorphic panel that raises in, periodically presses in and releases, then raises back out.",
   "author": {
     "name": "Dunn Lewis"
   },
