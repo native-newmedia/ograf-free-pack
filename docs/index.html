@@ -49,8 +49,8 @@ th{color:var(--mut);font-weight:600} td.d{color:var(--mut)}
 
 <h2 class="sec">1. Setup</h2>
 <div class="grid2">
-<div class="box"><h4>Load</h4><ol><li>Add an <b>OGrafLoader</b> node in Fusion.</li><li>Set its file to the graphic's <code>.ograf.json</code>.</li><li>Keep each graphic's folder together; it loads its scripts from there.</li></ol></div>
-<div class="box"><h4>Comps</h4><p style="margin:0;color:#C9D3E6">Each graphic has a ready-made comp. The folder below is the one this page is saved in. Change it if the graphic folders are somewhere else, then use <b>Download comp</b> on a card and drop the .setting file into Fusion.</p><input id="root" type="text" placeholder="/path/to/OGraf-Free" spellcheck="false"><p id="rootmsg" style="margin:8px 0 0;color:#FFB400;display:none">Enter the folder that holds the graphic folders first.</p></div>
+<div class="box"><h4>Load</h4><ol><li>Copy the <code>OGraf-Free</code> folder into Resolve's Titles folder. <br>Mac:<br><code style="overflow-wrap:anywhere">~/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles</code><br>Windows:<br><code style="overflow-wrap:anywhere">%APPDATA%\Blackmagic Design\DaVinci Resolve\Support\Fusion\Templates\Edit\Titles</code></li><li>Add an <b>OGrafLoader</b> node in Fusion and set its file to the graphic's <code>.ograf.json</code>.</li><li>Keep each graphic's folder together; it loads its scripts from there.</li></ol></div>
+<div class="box"><h4>Comps</h4><p style="margin:0;color:#C9D3E6">Each graphic has a ready-made comp. Use <b>Download comp</b> on a card and drop the .setting file into Fusion. The comp loads the graphic from <code>Templates:Edit/Titles/OGraf-Free</code>, the folder from the Load step. If your graphic folders are somewhere else, enter that folder here first (optional).</p><input id="root" type="text" placeholder="Optional: /path/to/folder" spellcheck="false"></div>
 <div class="box"><h4>Play</h4><ul><li><b>Play</b> runs the intro, <b>Stop</b> runs the outro.</li><li>Edit controls in the Inspector; changes show at the playhead.</li><li>Graphics are driven by time, so scrubbing and rendering match.</li></ul></div>
 </div>
 
@@ -207,26 +207,16 @@ th{color:var(--mut);font-weight:600} td.d{color:var(--mut)}
 (function () {
   var COMPS = JSON.parse(document.getElementById('comps').textContent);
   var TOKEN = "@@PACK@@/";
-  var DEFAULT_BASE = 'Templates:Edit/Titles/OGraf-Free';   // the GitHub page sets this to the Templates: path
-  var AUTOFILL = false;     // the GitHub page turns this off
-  var root = document.getElementById('root'), msg = document.getElementById('rootmsg');
-  function pageDir() {
-    if (!AUTOFILL || location.protocol !== 'file:') return '';
-    var p; try { p = decodeURIComponent(location.pathname); } catch (e) { return ''; }
-    if (/^\/[A-Za-z]:/.test(p)) p = p.slice(1);
-    else if (location.host) p = '//' + location.host + p;
-    return p.replace(/\/[^\/]*$/, '');
-  }
-  var KEY = 'ograf-root-' + (pageDir() || 'web');
+  var DEFAULT_BASE = "Templates:Edit/Titles/OGraf-Free";   // used when the folder field is empty
+  var root = document.getElementById('root');
+  var KEY = 'ograf-root-' + "OGraf-Free";
   try { root.value = localStorage.getItem(KEY) || ''; } catch (e) {}
-  if (!root.value) root.value = pageDir();
-  root.addEventListener('input', function () { msg.style.display = 'none'; try { localStorage.setItem(KEY, root.value); } catch (e) {} });
+  root.addEventListener('input', function () { try { localStorage.setItem(KEY, root.value); } catch (e) {} });
   document.addEventListener('click', function (ev) {
     var b = ev.target.closest('button.dl'); if (!b) return;
     var text = COMPS[b.dataset.comp];
     var base = root.value.trim().split(String.fromCharCode(92)).join('/') || DEFAULT_BASE;
     while (base.endsWith('/')) base = base.slice(0, -1);
-    if (!base) { msg.style.display = 'block'; root.focus(); return; }
     text = text.split(TOKEN).join(base + '/');
     var a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([text], { type: 'text/plain' }));
