@@ -893,7 +893,7 @@ Composition {
 				DynParamNum7 = Input { Value = 6, },
 				DynParamNum8 = Input { Value = 10, },
 				DynParamNum9 = Input { Value = 90, },
-				DynParamNum10 = Input { Value = 1, },
+				DynParamNum10 = Input { Value = 1.5, },
 				DynParamNum11 = Input { Value = 3, },
 				DynParamNum12 = Input { Value = 0.15, },
 				DynParamNum13 = Input { Value = 1.2, },

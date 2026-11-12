@@ -293,6 +293,14 @@ class AutoFitHeadlines extends HTMLElement {
 
     const fit = this._autoFitWdth(text, wght);
     this._headlineEl.textContent = text;
+    // Auto-fit only: when the Min Width floor still leaves one word wider than the frame, shrink the font so the word fits.
+    let fs = this._headlinePx;
+    if (fit.overflow && fit.mode !== 'manual' && fit.mode !== 'unavailable') {
+      const k = (fit.scalePct ?? 100) / 100;
+      const longest = Math.max(1, ...text.split(/\s+/).filter(Boolean).map((w) => this._measureAt(w, wght, fit.wdth) * k));
+      if (longest > this._containerWidthPx()) fs = this._headlinePx * this._containerWidthPx() / longest * 0.995;
+    }
+    this._headlineEl.style.fontSize = fs + 'px';
 
     if (fit.overflow) {
       this._headlineEl.style.whiteSpace = 'normal';

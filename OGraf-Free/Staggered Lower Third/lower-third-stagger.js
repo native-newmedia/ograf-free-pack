@@ -34,7 +34,7 @@ const DEFAULT_STATE = {
   easePower:       3,
   introDuration:   1.2,   // s — default = actionDurations.playAction / 1000
   outroDuration:   0.8,   // s — default = actionDurations.stopAction / 1000
-  scale:           1.0,
+  scale:           1.5,
 };
 
 const STYLE_TEXT = `
@@ -137,7 +137,7 @@ class LowerThirdStagger extends HTMLElement {
     this._applySafeVars(fmt);
     this._watchSize();
     this._syncSize();
-    this.style.setProperty('--scale', String(this._state.scale ?? 1.0));
+    this.style.setProperty('--scale', String(this._state.scale ?? 1.5));
     this._applyState();
     this._renderAtTime(0);
     return { statusCode: 200 };
@@ -177,7 +177,7 @@ class LowerThirdStagger extends HTMLElement {
     const data = _normaliseColors(params.data || {});
     this._state = { ...this._state, ...data };
     this._initialData = { ...this._initialData, ...data };
-    this.style.setProperty('--scale', String(this._state.scale ?? 1.0));
+    this.style.setProperty('--scale', String(this._state.scale ?? 1.5));
     this._applyState();
     return { statusCode: 200 };
   }
@@ -189,7 +189,7 @@ class LowerThirdStagger extends HTMLElement {
     // ms -> s: the / 1000 conversion lives in replaySchedule
     const { state, secIn, secOut } = replaySchedule(this._schedule, timestamp, { ...DEFAULT_STATE, ...this._initialData }, _normaliseColors);
     this._state = state;
-    this.style.setProperty('--scale', String(this._state.scale ?? 1.0));
+    this.style.setProperty('--scale', String(this._state.scale ?? 1.5));
     this._applyState();
     if (secIn === null) this._applyFrame(0, 0, 0, 0);
     else this._renderAtTime(secIn, secOut);
