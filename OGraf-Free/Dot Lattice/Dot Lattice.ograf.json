@@ -67,26 +67,26 @@
       },
       "contained": {
         "type": "boolean",
-        "title": "Contained Card (off = full-bleed background)",
+        "title": "Contained Card",
         "default": false
       },
       "cardWidth": {
         "type": "number",
-        "title": "Card Width (px, contained only)",
+        "title": "Card Width (px)",
         "default": 480,
         "minimum": 60,
         "maximum": 1800
       },
       "cardHeight": {
         "type": "number",
-        "title": "Card Height (px, contained only)",
+        "title": "Card Height (px)",
         "default": 300,
         "minimum": 60,
         "maximum": 1000
       },
       "cornerRadius": {
         "type": "number",
-        "title": "Corner Radius (px, contained only)",
+        "title": "Corner Radius (px)",
         "default": 24,
         "minimum": 0,
         "maximum": 300
@@ -135,7 +135,7 @@
       },
       "easePower": {
         "type": "number",
-        "title": "Ease Power (1 = linear, 3 = cubic)",
+        "title": "Ease Power",
         "default": 3,
         "minimum": 1,
         "maximum": 6

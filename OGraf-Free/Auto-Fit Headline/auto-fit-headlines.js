@@ -32,7 +32,7 @@ const DEFAULT_STATE = {
   introDuration:    1,     // s, = manifest actionDurations.playAction / 1000
   outroDuration:    1,     // s, = manifest actionDurations.stopAction / 1000
   stagger:          0.15,
-  showDebug:        false,
+  showFitBox:       false,
 };
 
 const URGENCY_WEIGHT = { BREAKING: 900, ALERT: 700, UPDATE: 500, DEVELOPING: 400 };
@@ -68,8 +68,6 @@ class AutoFitHeadlines extends HTMLElement {
       .afh-rule { height:4px; margin-top:0.3em; width:64px; }
       .afh-measure { position:absolute; left:-9999px; top:-9999px; visibility:hidden; white-space:nowrap;
                      text-transform:uppercase; }
-      .afh-legend { position:absolute; left:24px; bottom:20px; font-family:'SF Mono', Menlo, monospace;
-                    font-size:14px; color:rgba(255,255,255,0.4); letter-spacing:0.02em; }
     </style>`;
     this._shadow = shadow;
 
@@ -88,10 +86,6 @@ class AutoFitHeadlines extends HTMLElement {
     this._measureEl = document.createElement('div');
     this._measureEl.className = 'afh-measure';
     shadow.appendChild(this._measureEl);
-
-    this._legend = document.createElement('div');
-    this._legend.className = 'afh-legend';
-    shadow.appendChild(this._legend);
 
     this._stage = stage; this._container = container;
   }
@@ -324,12 +318,9 @@ class AutoFitHeadlines extends HTMLElement {
       this._headlineEl.style.transformOrigin = 'left center';
     }
 
-    const axisNote = this._fontTier === 3 ? 'no font loaded — full fallback'
-      : !this._hasWdth ? `wdth not in this font — fit via scaleX(${(fit.scalePct / 100).toFixed(2)})`
-      : `wdth ${fit.wdth.toFixed(0)}`;
-    const wrapNote = fit.overflow ? ', wrapped' : '';
-    this._legend.style.display = this._state.showDebug ? 'block' : 'none';
-    this._legend.textContent = `${axisNote} (${fit.mode}${wrapNote}) · wght ${wght} · container ${this._containerWidthPx().toFixed(0)}px`;
+    // Show Fit Box: dashed outline around the text block, the width the fit works to
+    this._container.style.outline = this._state.showFitBox ? '2px dashed #2ED3A0' : 'none';
+    this._container.style.outlineOffset = '6px';
   }
 }
 

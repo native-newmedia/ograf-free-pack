@@ -16,11 +16,36 @@
         "properties": {
 
             "orbState": {
-                "type": "integer",
-                "title": "Orb State: 1 working  2 searching  3 solving  4 listening  5 connecting  6 weaving  7 composing  8 breathing  9 shaping",
-                "default": 2,
-                "minimum": 1,
-                "maximum": 9
+              "type": "integer",
+              "title": "Orb State",
+              "default": 2,
+              "minimum": 1,
+              "maximum": 9,
+              "enum": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "gddType": "select",
+              "gddOptions": {
+                "labels": {
+                  "1": "Working",
+                  "2": "Searching",
+                  "3": "Solving",
+                  "4": "Listening",
+                  "5": "Connecting",
+                  "6": "Weaving",
+                  "7": "Composing",
+                  "8": "Breathing",
+                  "9": "Shaping"
+                }
+              }
             },
             "orbSize": {
                 "type": "number",
@@ -30,18 +55,18 @@
                 "maximum": 1600
             },
             "posX": {
-                "type": "number",
-                "title": "Position X (0-1 of frame)",
-                "default": 0.5,
-                "minimum": 0,
-                "maximum": 1
+              "type": "number",
+              "title": "Position X",
+              "default": 0.5,
+              "minimum": 0,
+              "maximum": 1
             },
             "posY": {
-                "type": "number",
-                "title": "Position Y (0-1 of frame)",
-                "default": 0.5,
-                "minimum": 0,
-                "maximum": 1
+              "type": "number",
+              "title": "Position Y",
+              "default": 0.5,
+              "minimum": 0,
+              "maximum": 1
             },
 
             "speedMul": {
@@ -82,18 +107,18 @@
                 }
             },
             "inkBrightColor": {
-                "type": "string",
-                "title": "Ink: Bright End (tint here)",
-                "default": "#ffffff",
-                "gddType": "color-rrggbb",
-                "pattern": "^#[0-9a-f]{6}$"
+              "type": "string",
+              "title": "Ink: Bright End",
+              "default": "#ffffff",
+              "gddType": "color-rrggbb",
+              "pattern": "^#[0-9a-f]{6}$"
             },
             "inkDimColor": {
-                "type": "string",
-                "title": "Ink: Dim End (raise to lift the far side)",
-                "default": "#000000",
-                "gddType": "color-rrggbb",
-                "pattern": "^#[0-9a-f]{6}$"
+              "type": "string",
+              "title": "Ink: Dim End",
+              "default": "#000000",
+              "gddType": "color-rrggbb",
+              "pattern": "^#[0-9a-f]{6}$"
             },
 
             "bgColor": {

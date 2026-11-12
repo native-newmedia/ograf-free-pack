@@ -43,7 +43,8 @@
       "subheadText": {
         "type": "string",
         "title": "Subhead (multi-line)",
-        "default": ""
+        "default": "",
+        "gddType": "multi-line"
       },
       "headlineColor": {
         "type": "string",
@@ -82,14 +83,14 @@
       },
       "minWdth": {
         "type": "integer",
-        "title": "Min Width (auto-fit floor, 25-100)",
+        "title": "Min Width (floor)",
         "default": 62,
         "minimum": 25,
         "maximum": 100
       },
       "maxWdth": {
         "type": "integer",
-        "title": "Max Width (auto-fit ceiling, 100-151)",
+        "title": "Max Width (ceiling)",
         "default": 125,
         "minimum": 100,
         "maximum": 151
@@ -97,7 +98,7 @@
  
       "manualWdth": {
         "type": "integer",
-        "title": "Manual Width (0 = auto-fit, else 25-151)",
+        "title": "Manual Width (0=auto)",
         "default": 0,
         "minimum": 0,
         "maximum": 151
@@ -117,14 +118,14 @@
       },
       "posX": {
         "type": "number",
-        "title": "X Position (% from left)",
+        "title": "X Position (%)",
         "default": 6,
         "minimum": 0,
         "maximum": 100
       },
       "posY": {
         "type": "number",
-        "title": "Y Position (% from top, centre)",
+        "title": "Y Position (%)",
         "default": 50,
         "minimum": 0,
         "maximum": 100
@@ -150,9 +151,9 @@
         "minimum": 0.2,
         "maximum": 10
       },
-      "showDebug": {
+      "showFitBox": {
         "type": "boolean",
-        "title": "Show Debug Text",
+        "title": "Show Fit Box",
         "default": false
       }
     }

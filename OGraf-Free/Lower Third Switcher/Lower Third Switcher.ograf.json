@@ -19,40 +19,51 @@
     "additionalProperties": false,
     "properties": {
       "currentLayout": {
-          "type": "number",
-          "title": "Active Layout (1 Layout A, 2 Layout B)",
-          "default": 1,
-          "minimum": 1,
-          "maximum": 2
+        "type": "integer",
+        "title": "Active Layout",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 2,
+        "enum": [
+          1,
+          2
+        ],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "1": "Layout A",
+            "2": "Layout B"
+          }
+        }
       },
       "nameA": {
         "type": "string",
-        "title": "Name A",
+        "title": "Layout A: Name",
         "default": "Sarah Johnson"
       },
       "titleA": {
         "type": "string",
-        "title": "Title A",
+        "title": "Layout A: Title",
         "default": "CEO, Acme Corp"
       },
       "subtitleA": {
         "type": "string",
-        "title": "Subtitle A",
+        "title": "Layout A: Subtitle",
         "default": "London"
       },
       "nameB": {
         "type": "string",
-        "title": "Name B",
+        "title": "Layout B: Name",
         "default": "James Chen"
       },
       "titleB": {
         "type": "string",
-        "title": "Title B",
+        "title": "Layout B: Title",
         "default": "CTO, Acme Corp"
       },
       "subtitleB": {
         "type": "string",
-        "title": "Subtitle B",
+        "title": "Layout B: Subtitle",
         "default": "New York"
       },
       "accentColor": {
@@ -85,7 +96,7 @@
       },
       "easePower": {
         "type": "number",
-        "title": "Ease Power (1 = linear, 3 = cubic)",
+        "title": "Ease Power",
         "default": 3,
         "minimum": 1,
         "maximum": 6

@@ -26,7 +26,7 @@
       },
       "reloadData": {
         "type": "boolean",
-        "title": "Reload Data (toggle to re-read)",
+        "title": "Reload Data",
         "default": false,
         "description": "Tick or untick this box to make the graphic re-read the data file."
       },
@@ -140,7 +140,7 @@
       },
       "easePower": {
         "type": "number",
-        "title": "Ease Power (1 = linear, 3 = cubic)",
+        "title": "Ease Power",
         "default": 3,
         "minimum": 1,
         "maximum": 6

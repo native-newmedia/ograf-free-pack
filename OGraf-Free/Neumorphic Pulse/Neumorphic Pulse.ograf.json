@@ -97,7 +97,7 @@
       },
       "cornerRadius": {
         "type": "number",
-        "title": "Corner Radius (px, rounded-square only)",
+        "title": "Corner Radius (px)",
         "default": 33.7,
         "minimum": 0,
         "maximum": 300
@@ -142,7 +142,7 @@
       },
       "pulseEnabled": {
         "type": "boolean",
-        "title": "Auto Press/Release Pulse",
+        "title": "Auto Press/Release",
         "default": true
       },
       "pulseInterval": {
@@ -188,12 +188,12 @@
         "maximum": 10
       },
        "easePower": {
-        "type": "number",
-        "title": "Ease Power (1 = linear, 3 = cubic)",
-        "default": 3,
-        "minimum": 1,
-        "maximum": 6
-      },
+         "type": "number",
+         "title": "Ease Power",
+         "default": 3,
+         "minimum": 1,
+         "maximum": 6
+       },
       "outroDuration": {
         "type": "number",
         "title": "Outro Duration (s)",
@@ -204,7 +204,7 @@
 
       "bridgeJson": {
         "type": "string",
-        "title": "Bridge JSON (set by vOGrafManifestUI Fuse)",
+        "title": "Bridge JSON",
         "description": "Values of every property after this one, as JSON. OGrafLoader shows only 20 properties, so vOGrafManifestUI writes the rest here. Leave empty to use the defaults.",
         "default": ""
       }

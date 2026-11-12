@@ -26,7 +26,7 @@
       },
       "reloadData": {
         "type": "boolean",
-        "title": "Reload Data (toggle to re-read)",
+        "title": "Reload Data",
         "default": false,
         "description": "Tick or untick this box to make the graphic re-read the data file."
       },
@@ -67,7 +67,7 @@
       },
       "liveBugBgColor": {
         "type": "string",
-        "title": "Live Bug Background Colour",
+        "title": "Live Bug Background",
         "default": "#e53030",
         "gddType": "color-rrggbb",
         "pattern": "^#[0-9a-f]{6}$"
@@ -124,7 +124,7 @@
       },
       "easePower": {
         "type": "number",
-        "title": "Ease Power (1 = linear, 3 = cubic)",
+        "title": "Ease Power",
         "default": 3,
         "minimum": 1,
         "maximum": 6
