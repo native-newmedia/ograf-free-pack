@@ -62,11 +62,11 @@ class AutoFitHeadlines extends HTMLElement {
       .afh-urgency { font-family:'${FONT_FAMILY}', ${FALLBACK_STACK}; text-transform:uppercase; letter-spacing:0.14em;
                      font-weight:700; margin-bottom:0.35em; }
       .afh-headline { font-family:'${FONT_FAMILY}', ${FALLBACK_STACK}; text-transform:uppercase;
-                      white-space:nowrap; line-height:1.02;  }
+                      white-space:pre; line-height:1.02;  }
       .afh-subhead { font-family:'${FONT_FAMILY}', ${FALLBACK_STACK};
                      margin-top:0.4em; font-weight:400; white-space:pre-wrap; }
       .afh-rule { height:4px; margin-top:0.3em; width:64px; }
-      .afh-measure { position:absolute; left:-9999px; top:-9999px; visibility:hidden; white-space:nowrap;
+      .afh-measure { position:absolute; left:-9999px; top:-9999px; visibility:hidden; white-space:pre;
                      text-transform:uppercase; }
     </style>`;
     this._shadow = shadow;
@@ -303,10 +303,10 @@ class AutoFitHeadlines extends HTMLElement {
     this._headlineEl.style.fontSize = fs + 'px';
 
     if (fit.overflow) {
-      this._headlineEl.style.whiteSpace = 'normal';
+      this._headlineEl.style.whiteSpace = 'pre-wrap';
       this._headlineEl.style.width = this._containerWidthPx() + 'px';
     } else {
-      this._headlineEl.style.whiteSpace = 'nowrap';
+      this._headlineEl.style.whiteSpace = 'pre';
       this._headlineEl.style.width = 'auto';
     }
 

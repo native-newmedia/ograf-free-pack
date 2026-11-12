@@ -21,7 +21,8 @@
       "headlineText": {
         "type": "string",
         "title": "Headline",
-        "default": "AUTO-FIT HEADLINES (ROBOTO FLEX) - SHORT HEADLINES EXPAND, LONG ONES CONDENSE WITHOUT LETTERFORM DISTORTION"
+        "default": "AUTO-FIT HEADLINES (ROBOTO FLEX) - SHORT HEADLINES EXPAND, LONG ONES CONDENSE WITHOUT LETTERFORM DISTORTION",
+         "gddType": "multi-line"
       },
       "urgency": {
         "type": "number",
@@ -42,9 +43,9 @@
       },
       "subheadText": {
         "type": "string",
-        "title": "Subhead (multi-line)",
+        "title": "Subhead",
         "default": "",
-        "gddType": "multi-line"
+        "gddType": "single-line"
       },
       "headlineColor": {
         "type": "string",
