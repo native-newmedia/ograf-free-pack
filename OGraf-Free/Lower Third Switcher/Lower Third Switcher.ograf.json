@@ -83,9 +83,9 @@
       "scale": {
         "type": "number",
         "title": "Scale",
-        "default": 1.5,
+        "default": 2.0,
         "minimum": 0.1,
-        "maximum": 2.0
+        "maximum": 3.0
       },
       "stagger": {
         "type": "number",

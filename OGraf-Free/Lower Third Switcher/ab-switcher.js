@@ -29,7 +29,7 @@ const DEFAULT_STATE = {
   accentColor:    '#00d2ff',
   bgOpacity:      0.88,
   stagger:        0.15, 
-  scale:          1.5,
+  scale:          2.0,
 };
 
 

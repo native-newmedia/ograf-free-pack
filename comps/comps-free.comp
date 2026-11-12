@@ -608,7 +608,7 @@ Composition {
 				DynParamColor7_G = Input { Value = 0.823529411764706, },
 				DynParamColor7_B = Input { Value = 1, },
 				DynParamNum8 = Input { Value = 0.88, },
-				DynParamNum9 = Input { Value = 1.5, },
+				DynParamNum9 = Input { Value = 2, },
 				DynParamNum10 = Input { Value = 0.15, },
 				DynParamNum11 = Input { Value = 3, },
 				DynParamNum12 = Input { Value = 0.5, },
