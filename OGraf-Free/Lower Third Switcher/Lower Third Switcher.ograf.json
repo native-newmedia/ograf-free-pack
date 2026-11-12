@@ -120,15 +120,15 @@
   "customActions": [
     {
       "id": "a",
-      "name": "Switch to A"
+      "name": "Switch to Layout A"
     },
     {
       "id": "b",
-      "name": "Switch to B"
+      "name": "Switch to Layout B"
     },
     {
       "id": "toggle",
-      "name": "Toggle A/B"
+      "name": "Toggle Layout A/B"
     }
   ],
   "renderRequirements": [
