@@ -16,9 +16,6 @@ const DEFAULT_STATE = {
   introDuration: 0.55,   // s, = manifest actionDurations.playAction / 1000
   outroDuration: 0.4,   // s, = manifest actionDurations.stopAction / 1000
   easePower: 3,
-  manualName:    'Jane Smith',
-  title:         'Senior Correspondent',
-  subtitle:      'Washington D.C.',
   showSubtitle:  true,
   showCounter:   true,
   accentColor:   '#00d2ff',
@@ -305,7 +302,7 @@ class DataDrivenLowerThird extends HTMLElement {
     const { showSubtitle, showCounter } = this._state;
     this._els.kickerEl.textContent   = src.show || '';
     this._els.kickerEl.style.display = src.show ? '' : 'none';
-    this._els.nameEl.textContent     = (src.name ?? src.manualName) || '';
+    this._els.nameEl.textContent     = src.name || '';
     this._els.titleEl.textContent    = src.title    || '';
     this._els.subEl.textContent      = src.subtitle || '';
     this._els.subEl.style.display    = (showSubtitle && src.subtitle) ? '' : 'none';

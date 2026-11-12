@@ -3,7 +3,7 @@
   "id": "data-driven-lower-third",
   "version": "1.0.0",
   "name": "Data Lower Third",
-  "description": "Lower third driven by a local JSON feed. The Data Entry slider jumps straight to any person, Next/Prev cycle through entries, Fetch (or the Reload Data checkbox) reloads the data. Manual override via Inspector text fields.",
+  "description": "Lower third driven by a local JSON feed. The Data Entry slider jumps straight to any person, the Next and Previous Data Entry actions cycle through entries, Fetch (or the Reload Data checkbox) reloads the data.",
   "author": {
     "name": "Dunn Lewis"
   },
@@ -29,21 +29,6 @@
         "title": "Reload Data",
         "default": false,
         "description": "Tick or untick this box to make the graphic re-read the data file."
-      },
-      "manualName": {
-        "type": "string",
-        "title": "Name (manual)",
-        "default": "Jane Smith"
-      },
-      "title": {
-        "type": "string",
-        "title": "Title (manual)",
-        "default": "Senior Correspondent"
-      },
-      "subtitle": {
-        "type": "string",
-        "title": "Subtitle (manual)",
-        "default": "Washington D.C."
       },
       "showSubtitle": {
         "type": "boolean",
@@ -154,7 +139,7 @@
     },
     {
       "id": "prev",
-      "name": "Prev"
+      "name": "Previous Data Entry"
     },
     {
       "id": "next",
