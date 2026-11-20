@@ -30,7 +30,7 @@
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/JSON Lower Third/JSON Lower Third.ograf.json", },
+				TemplatePath = Input { Value = "Templates:Edit/OGraf-Free/JSON Lower Third/JSON Lower Third.ograf.json", },
 				GlobalOut = Input { Value = 599, },
 				TrimOut = Input { Value = 599, },
 				StopActionUserModified = Input { Value = 0, },

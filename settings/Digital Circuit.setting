@@ -30,7 +30,7 @@
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-				TemplatePath = Input { Value = "Templates:Edit/Titles/OGraf-Free/Digital Circuit/Digital Circuit.ograf.json", },
+				TemplatePath = Input { Value = "Templates:Edit/OGraf-Free/Digital Circuit/Digital Circuit.ograf.json", },
 				GlobalOut = Input { Value = 3599, },
 				TrimOut = Input { Value = 3599, },
 				StopActionUserModified = Input { Value = 0, },
