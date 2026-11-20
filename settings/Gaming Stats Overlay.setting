@@ -66,7 +66,7 @@
 		},
 		BG_Gaming_Stats_Overlay = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },

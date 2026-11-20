@@ -37,7 +37,6 @@
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
 				["ScheduledAction_1.Time"] = Input { Value = 575, },
-				DynParamNum0 = Input { Value = 2, },
 				DynParamCombo0 = Input { Value = FuID { "2" }, },
 				DynParamNum1 = Input { Value = 721, },
 				DynParamNum2 = Input { Value = 0.5, },
@@ -61,7 +60,7 @@
 		},
 		BG_Thinking_Orbs = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },

@@ -13,17 +13,19 @@
 
 ## Install
 
-1. Download the latest zip from [Releases](../../releases) or clone this repo.
-2. Copy the `OGraf-Free` folder into the Resolve Titles templates folder:
-   - macOS: `~/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/`
-   - Windows (untested): `%APPDATA%\Blackmagic Design\DaVinci Resolve\Support\Fusion\Templates\Edit\Titles\`
+1. Download `OGraf-Free-Pack.zip` from [Releases](../../releases).
+2. Unzip the `Edit` and `Fusion` folders into the Resolve Templates folder, so that you end up with `Templates/Edit/OGraf-Free` and `Templates/Fusion/OGraf-Free`:
+   - macOS: `~/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/`
+   - Windows (untested): `%APPDATA%\Blackmagic Design\DaVinci Resolve\Support\Fusion\Templates\`
 3. Restart Resolve. Keep each graphic's folder together, because it loads its scripts from there.
+
+The two folders hold the same graphics. The Fusion copy names each thumbnail `<Graphic Name>.ograf.png`, which is the name the Fusion page reads; the Edit copy uses `<Graphic Name>.png`. The `OGraf-Free` folder in this repository is the Edit copy.
 
 ## Use
 
 In Fusion, add an `OGrafLoader` node and set its file to a graphic's `.ograf.json`. Play runs the intro, Stop runs the outro.
 
-Ready-made Fusion comps are in `settings/` (one `.setting` per graphic) and `comps/comps-free.comp` (all graphics in one comp). They expect the pack installed as `OGraf-Free` in the Titles folder as above.
+Ready-made Fusion comps are in `settings/` (one `.setting` per graphic) and `comps/comps-free.comp` (all graphics in one comp). They expect the pack in `Templates/Edit/OGraf-Free`, as above.
 
 Full control lists for every graphic are on the [documentation site](https://native-newmedia.github.io/ograf-free-pack/).
 

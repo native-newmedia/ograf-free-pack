@@ -37,7 +37,6 @@
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
 				["ScheduledAction_1.Time"] = Input { Value = 575, },
-				DynParamNum0 = Input { Value = 1, },
 				DynParamCombo0 = Input { Value = FuID { "1" }, },
 				DynParamText1 = Input { Value = "Sarah Johnson", },
 				DynParamText2 = Input { Value = "CEO, Acme Corp", },
@@ -61,7 +60,7 @@
 		},
 		BG_Lower_Third_Switcher = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },

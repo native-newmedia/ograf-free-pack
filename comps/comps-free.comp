@@ -1,8 +1,8 @@
 Composition {
-	CurrentTime = 95,
-	RenderRange = { 0, 299 },
-	GlobalRange = { 0, 299 },
-	CurrentID = 188,
+	CurrentTime = 263,
+	RenderRange = { 0, 601 },
+	GlobalRange = { 0, 601 },
+	CurrentID = 1889,
 	HiQ = true,
 	PlaybackUpdateMode = 0,
 	StereoMode = false,
@@ -19,7 +19,7 @@ Composition {
 	Tools = {
 		BG_Auto_Fit_Headline = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -90,7 +90,7 @@ Composition {
 		},
 		BG_Cyber_Grid = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -160,7 +160,7 @@ Composition {
 		},
 		BG_Data_Lower_Third = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -232,7 +232,7 @@ Composition {
 		},
 		BG_Digital_Circuit = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -297,7 +297,7 @@ Composition {
 		},
 		BG_Dot_Lattice = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -364,7 +364,7 @@ Composition {
 		},
 		BG_Flow_Field = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -426,7 +426,7 @@ Composition {
 		},
 		BG_Gaming_Stats_Overlay = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -498,7 +498,7 @@ Composition {
 		},
 		BG_JSON_Lower_Third = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -576,7 +576,7 @@ Composition {
 		},
 		BG_Lower_Third_Switcher = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -597,7 +597,6 @@ Composition {
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
 				["ScheduledAction_1.Time"] = Input { Value = 575, },
-				DynParamNum0 = Input { Value = 1, },
 				DynParamCombo0 = Input { Value = FuID { "1" }, },
 				DynParamText1 = Input { Value = "Sarah Johnson", },
 				DynParamText2 = Input { Value = "CEO, Acme Corp", },
@@ -643,7 +642,7 @@ Composition {
 		},
 		BG_Neumorphic_Pulse = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -714,7 +713,7 @@ Composition {
 		},
 		BG_Pinwheel = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -786,7 +785,7 @@ Composition {
 		},
 		BG_Sine_Wave = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -853,7 +852,7 @@ Composition {
 		},
 		BG_Staggered_Lower_Third = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -925,7 +924,7 @@ Composition {
 		},
 		BG_Thinking_Orbs = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -946,7 +945,6 @@ Composition {
 				["ScheduledAction_0.Name"] = Input { Value = "playAction", },
 				["ScheduledAction_1.Name"] = Input { Value = "stopAction", },
 				["ScheduledAction_1.Time"] = Input { Value = 575, },
-				DynParamNum0 = Input { Value = 2, },
 				DynParamCombo0 = Input { Value = FuID { "2" }, },
 				DynParamNum1 = Input { Value = 721, },
 				DynParamNum2 = Input { Value = 0.5, },
@@ -992,7 +990,7 @@ Composition {
 		},
 		BG_Wave_Interference = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -1050,7 +1048,7 @@ Composition {
 		},
 		BG_Weave_Pattern = Background {
 			Inputs = {
-				GlobalOut = Input { Value = 299, },
+				GlobalOut = Input { Value = 601, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
@@ -1124,14 +1122,14 @@ Composition {
 			PresetName = "Default",
 			Left = 0,
 			Top = 0,
-			Width = 1728,
-			Height = 935,
-			ZoneInfo = { AuxRight = { Expanded = true }, ["!Left"] = {
-				}, AuxLeft = { Expanded = true }, Right = { Expanded = true, }, Left = { Expanded = false, }, ["!Right"] = {
-				} },
-			ViewInfo = { Viewer1 = { Show = true, RatioX = 0.906282485050207, RatioY = 0.01, }, InnerLeft = { PixelX = 504, RatioY = 100, }, MainSplit = { RatioX = 100, RatioY = 1.43532635536646, }, CenterSplit = { RatioX = 1.00043019856007, RatioY = 100, }, Viewer2 = { Show = true, RatioX = 4.86707260489926, RatioY = 0.01, }, Comments = { Show = false }, Time = { Show = true, RatioX = 100, }, InnerColumns = { RatioX = 100, RatioY = 1.57169940575757, }, Keyframes = { Show = false, }, LayoutStrip = { Show = true, }, Inspector = { Show = true, RatioX = 100, RatioY = 1, }, InnerRight = {
-				}, MediaPool = { Show = false, }, OuterColumns = { RatioX = 100, RatioY = 1, }, Effects = { Show = false, }, ActionStrip = { Show = true, RatioX = 100, }, Metadata = { Show = false, }, OuterLeft = {
-				}, ViewerSplit = { RatioX = 100, RatioY = 1, }, Nodes = { Show = true, RatioX = 1, RatioY = 100, }, OuterRight = { PixelX = 520, RatioY = 100, }, Clips = { Show = false, }, Spline = { Show = false, } },
+			Width = 2560,
+			Height = 1255,
+			ZoneInfo = { ["!Right"] = {
+				}, ["!Left"] = {
+				}, AuxLeft = { Expanded = true }, Right = { Expanded = true, }, Left = { Expanded = false, }, AuxRight = { Expanded = true } },
+			ViewInfo = { Viewer1 = { Show = true, RatioX = 0.912574743153346, RatioY = 0.01, }, InnerLeft = { RatioY = 100, PixelX = 504, }, MainSplit = { RatioX = 100, RatioY = 1.25391318127123, }, CenterSplit = { RatioX = 1.00043019856007, RatioY = 100, }, Viewer2 = { Show = true, RatioX = 4.86078034679613, RatioY = 0.01, }, Comments = { Show = false }, Time = { Show = true, RatioX = 100, }, InnerColumns = { RatioX = 100, RatioY = 1.7531125798528, }, Keyframes = { Show = false, }, LayoutStrip = { Show = true, }, Inspector = { Show = true, RatioX = 100, RatioY = 1, }, InnerRight = {
+				}, ActionStrip = { Show = true, RatioX = 100, }, OuterColumns = { RatioX = 100, RatioY = 1, }, Effects = { Show = true, Adjust = false, RatioX = 1, RatioY = 100, MRU = 2 }, Clips = { Show = false, }, Metadata = { Show = false, }, OuterLeft = {
+				}, ViewerSplit = { RatioX = 100, RatioY = 1, }, Nodes = { Show = true, RatioX = 1, RatioY = 100, }, OuterRight = { RatioY = 100, PixelX = 520, }, MediaPool = { Show = false, Adjust = true, RatioX = 1, RatioY = 100, MRU = 0 }, Spline = { Show = false, } },
 			Views = ordered() {
 				MediaPool = "MediaPoolView",
 				Effects = MultiView {
@@ -1154,8 +1152,8 @@ Composition {
 						NavigatorSize = { 200, 140 },
 						Direction = "Horizontal",
 						PipeStyle = "Direct",
-						RootScale = 0.261631,
-						RootOffset = { 984.147, 256.257 }
+						RootScale = 0.215559,
+						RootOffset = { 2584.64, 109.77 }
 					}
 				},
 				Keyframes = MultiView {
@@ -1332,11 +1330,15 @@ Composition {
 			Views = {
 				RightView = {
 					Viewer = {
+						ScaleMode = 1,
 						Layer = ":Default",
 					},
 					SideB = { PrevCtrlInactiveColor = 4278255360, PickW = 1, PickH = 1, PrevCtrlActiveColor = 4278190335, Viewer = { EnableLUTs = false, LUTPlugin = "FusionViewLUT", FitMarginY = 0, FitMarginX = 0, FitMarginType = 0, FarZ = -1000, NearZ = 0 } },
 				},
 				LeftView = {
+					Viewer = {
+						Layer = ":Default"
+					},
 					SideB = { PrevCtrlInactiveColor = 4278255360, PickW = 1, PickH = 1, PrevCtrlActiveColor = 4278190335, Viewer = { EnableLUTs = false, LUTPlugin = "FusionViewLUT", FitMarginY = 0, FitMarginX = 0, FitMarginType = 0, FarZ = -1000, NearZ = 0 } },
 				},
 				View1 = {
@@ -1355,7 +1357,7 @@ Composition {
 				DepthInteractive = 3,
 			},
 			Unsorted = {
-				GlobalEnd = 299
+				GlobalEnd = 601
 			},
 			SpellCheck = {
 				Language = "auto"
