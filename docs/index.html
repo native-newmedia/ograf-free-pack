@@ -45,11 +45,12 @@ th{color:var(--mut);font-weight:600} td.d{color:var(--mut)}
 </style></head><body><main>
 <h1>Free Pack</h1>
 <p class="lead">Documentation for 16 OGraf graphics for DaVinci Resolve Fusion. Part 1 covers setup, part 2 lists every graphic with its controls.</p>
+<p style="margin:20px 0 0"><a href="https://github.com/native-newmedia/ograf-free-pack/releases/latest/download/OGraf-Free-Pack.zip" style="display:inline-block;background:var(--amber);color:var(--ink);font:700 20px/1 'Barlow Condensed','Arial Narrow',sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:13px 24px;border-radius:8px;text-decoration:none">Download OGraf Free Pack (zip)</a><a href="https://github.com/native-newmedia/ograf-free-pack" style="margin-left:18px;color:var(--amber)">View on GitHub</a></p><p style="margin:10px 0 0;color:var(--mut);font-size:13px">Unzip the Edit and Fusion folders into the Resolve Templates folder, then restart Resolve. Requires Resolve 21.1.1 or later.</p>
 <div class="stats"><div><b>16</b><span>Graphics</span></div><div><b>21.1.1</b><span>Resolve minimum</span></div></div>
 
 <h2 class="sec">1. Setup</h2>
 <div class="grid2">
-<div class="box"><h4>Load</h4><ol><li>Add an <b>OGrafLoader</b> node in Fusion.</li><li>Set its file to the graphic's <code>.ograf.json</code>.</li><li>Keep each graphic's folder together; it loads its scripts from there.</li></ol></div>
+<div class="box"><h4>Load</h4><ol><li>Download the zip above and unzip <code>Edit</code> and <code>Fusion</code> into the Resolve Templates folder (they become <code>Templates/Edit/OGraf-Free</code> and <code>Templates/Fusion/OGraf-Free</code>). Restart Resolve.</li><li>Add an <b>OGrafLoader</b> node in Fusion.</li><li>Set its file to the graphic's <code>.ograf.json</code>.</li><li>Keep each graphic's folder together; it loads its scripts from there.</li></ol></div>
 <div class="box"><h4>Comps</h4><p style="margin:0;color:#C9D3E6">Each graphic has a ready-made comp. The folder below is the one this page is saved in. Change it if the graphic folders are somewhere else, then use <b>Download comp</b> on a card and drop the .setting file into Fusion.</p><input id="root" type="text" placeholder="/path/to/OGraf-Free" spellcheck="false"><p id="rootmsg" style="margin:8px 0 0;color:#FFB400;display:none">Enter the folder that holds the graphic folders first.</p></div>
 <div class="box"><h4>Play</h4><ul><li><b>Play</b> runs the intro, <b>Stop</b> runs the outro.</li><li>Edit controls in the Inspector; changes show at the playhead.</li><li>Graphics are driven by time, so scrubbing and rendering match.</li></ul></div>
 </div>

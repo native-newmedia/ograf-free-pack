@@ -10,7 +10,7 @@ Uiverse.io publishes its elements under the MIT License. Attribution is encourag
 | Cyber Grid | sunn_2633 |
 | Dot Lattice | csemszepp |
 | Weave Pattern | marcelodolza |
-| Pinwheel | not recorded in the source files |
+| Pinwheel | Uiverse.io creator |
 
 ## Thinking Orbs
 

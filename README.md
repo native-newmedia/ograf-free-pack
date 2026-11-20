@@ -8,15 +8,15 @@
 
 ## Requirements
 
-- DaVinci Resolve 21.1.1 or later with OGrafLoader. Tested on macOS with Resolve 21.1.2.
-- Windows has not been tested yet.
+- DaVinci Resolve 21.1.1 or later with OGrafLoader. Tested on macOS and Windows with Resolve 21.1.2.
+
 
 ## Install
 
 1. Download `OGraf-Free-Pack.zip` from [Releases](../../releases).
 2. Unzip the `Edit` and `Fusion` folders into the Resolve Templates folder, so that you end up with `Templates/Edit/OGraf-Free` and `Templates/Fusion/OGraf-Free`:
    - macOS: `~/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/`
-   - Windows (untested): `%APPDATA%\Blackmagic Design\DaVinci Resolve\Support\Fusion\Templates\`
+   - Windows: `%APPDATA%\Blackmagic Design\DaVinci Resolve\Support\Fusion\Templates\`
 3. Restart Resolve. Keep each graphic's folder together, because it loads its scripts from there.
 
 The two folders hold the same graphics. The Fusion copy names each thumbnail `<Graphic Name>.ograf.png`, which is the name the Fusion page reads; the Edit copy uses `<Graphic Name>.png`. The `OGraf-Free` folder in this repository is the Edit copy.
